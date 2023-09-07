@@ -13,7 +13,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'bUs33M4tch1ng*&^'
     # app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{DB_NAME}"
     # app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://root:Andyzxc4@localhost/{DB_NAME_MYSQL}"
-    app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://hgtvxviu07n441px:mauzgw92smwolwt9@co28d739i4m2sb7j.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/s0u8lmkxcm9q8b2z"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://d9f4an67tbvdty5a:mw8b32khieu2rbqn@uzb4o9e2oe257glt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jclcy9mxcyj918li"
     db.init_app(app)
 
 

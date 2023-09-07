@@ -1,0 +1,26 @@
+body .wrapper{
+	.sidebar-inner{ 
+        width: $sidebar-width; position: relative; margin-left: 0; margin-bottom: 15px; margin-left: $spacer; display: inline-block; overflow-y: auto; padding: 0 15px; vertical-align: top; @include transition(ease, all, 0.5s); 
+        &.active{ width: 0; padding: 0; overflow: hidden; border: 0 !important; left: -$sidebar-width}
+        #sidebarinner-left2{display: none}
+    }
+}
+.faqnav{
+	a{ color: $color-primary
+	}
+}
+
+
+@media screen and (max-width:992px){
+    body .wrapper{
+        .sidebar-inner{
+            position: absolute; left: 0;  z-index: 11;
+            #sidebarinner-left2{display:block}
+        }
+    }
+}
+
+@media screen and (max-width:767px){
+    body .wrapper .sidebar-inner{width: 100%; margin: 0 15px; margin-bottom: 15px;}
+    body .wrapper .sidebar-inner + div{width: 100%; }
+}

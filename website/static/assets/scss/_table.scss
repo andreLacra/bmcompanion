@@ -1,0 +1,40 @@
+.table { 
+	thead{
+		tr{
+			th{ background: darken($base-background, 1%); border-top: 0; border-bottom-width: 1px; font-weight: 400; color: $color-secondary; &.selected{background-color: rgba($color-secondary, 0.1);}}
+			
+		}
+	}
+	tbody{
+		tr {
+			td{ vertical-align: middle; padding:10px 15px; border-top: 0; color: $color-secondary; h2, h3, h4, h5{ color: $color-primary}
+				&.selected{background-color: rgba($color-secondary, 0.08);}
+			} 
+			&:hover{ 
+				td{ background: rgba($blue, 0.1); 
+					&:first-child{ 
+						position: relative;
+						&:before{content: ""; background: $blue; width: 3px; height: 100%; left: 0; top: 0; position: absolute; display: block;  }
+					}
+					&.selected{background-color: rgba($blue, 0.25);}
+				}
+			} 
+		} 
+	} 
+	&.table-bordered{
+		border: 0;
+		th{ border-width: 0; }
+		td{
+			border-width: 0; border-top: 1px solid rgba($color-secondary, 0.1); 
+		}
+	}
+	&.table-striped{
+		thead{ th{ background-color: rgba(0, 0, 0, 0.1); color: $color-primary} }
+		tbody tr:nth-of-type(odd){    background-color: rgba(0, 0, 0, 0.05);}
+	}
+}
+.table.dataTable{ width: 100% !important; border-collapse: collapse !important}
+
+.table-rows tbody tr td{ background: lighten( $base-background, 15%); border-top: 5px solid $base-background}
+.table-rows tfoot tr td{ border-top:0 }
+.card {.table-rows tbody tr td{ background:none; border-top: 1px solid $base-background}}

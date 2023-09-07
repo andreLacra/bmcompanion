@@ -1,0 +1,57 @@
+
+//base colors 
+$base-background: #e8ecf0;
+$color-primary: #20263e;
+$color-secondary: #8596ae;
+$color-text: lighten($color-secondary,15%);
+
+//card color
+$cards-color: $white;
+
+//sidebar colors 
+$sidebar-background: #673ab7;
+$sidebar-color1: #ffffff;
+$sidebar-color2: #ccbce6;
+$sidebar-color3: lighten($sidebar-color1, 15%);
+$sidebarmenu-active: $blue;
+$sidebarmenu-active-color: $white;
+
+//header colors 
+$header-background: #8258ce;
+$header-fontcolor1: #ffffff;
+$header-fontcolor2: #ccbce6;
+$header-fontcolor3: #baa2e2;
+
+//footer color
+$footer-background:#8596ae;
+$footer-color:lighten($footer-background, 45%);
+
+//border color 
+$border-color:#e9eff3;
+
+//Gradiet colors
+$gradient-success:#0097ac;
+$gradient-success2:#40f1c8;
+
+$gradient-danger: #a10256;
+$gradient-danger2: #f85a35;
+
+$gradient-warning: #ff7b03;
+$gradient-warning2: #ffd649;
+
+$gradient-info: #8de0ff;
+$gradient-info2: #94ffce;
+
+$gradient-primary:#5886ff;
+$gradient-primary2:#8de9ff;
+
+$gradient-secondary: $color-secondary;
+$gradient-secondary2: #a2c2ef;
+
+
+//width and heights
+$sidebar-width: 270px;
+$sidebar-small-width:100px;
+$footer-height : 50px;
+$header-height : 44px;
+$header-height-md : 44px;

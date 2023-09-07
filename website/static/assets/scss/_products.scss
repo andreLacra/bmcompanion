@@ -1,0 +1,13 @@
+.offer{ position: absolute; top: 0; left: 0; height: 30px; line-height: 30px; padding: 0 15px; display: block; text-transform: uppercase; z-index: 1}
+.card{
+	.quicklook{ position: absolute; bottom: 5px;  left: 21%; right: 0; margin: 0 auto; opacity: 0; @include  transition(ease, all, 0.5s); }
+	&:hover{ .quicklook{ opacity: 1; bottom: 20px; } }
+}
+.inputgroup-overlay{ max-width: 140px; margin: 0 auto; left: 0; right: 0; position: absolute; bottom: 15px; input{ background: #fff; } }
+.inputgroup-overlay-both{ max-width: 140px; margin: 0 auto; left: 0; right: 0; position: absolute; bottom: 0px; input{ background: #fff; } }
+.upperproduct{ margin-top: -15px; width: 100%;}
+.upperproduct-both{ margin-top: -20px; margin-bottom: -20px; width: 100%;}
+
+/*@media screen and (max-width:768px){
+	.upperproduct, .upperproduct-both{ margin:0  auto}
+}*/

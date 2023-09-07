@@ -1,0 +1,35 @@
+.custom-control-label{ line-height: 26px}
+.custom-control-label::before{ top: 6px}
+.custom-control-label::after{ top: 6px}
+select.form-control:not([size]):not([multiple]){height: auto}
+.custom-select{-webkit-appearance: none;  -moz-appearance: none;  appearance: none;}
+.form-control{ option, optgroup{ color:#222222; }}
+.form-control.faded{
+	border-radius: 50px; background: rgba($white, 0.4); color:$white; border: 0;
+	
+}
+
+.form-group.float-label{ 
+	margin-bottom: 20px; position: relative;padding-top: 20px;
+	& > button.overlay{ position: absolute; bottom: 0; right: 0;z-index: 2 }
+	.form-control[type="date"]{padding:  0.313rem 0rem}
+	label{ color: $color-secondary; @include transition(ease, all, 0.2s); line-height: 20px; position: absolute; top: 27px; left: 0; font-size: 15px; opacity: 0.5;  z-index: 0}
+	.form-control{
+		position: relative; z-index: 1; background: none; padding: 0.313rem 0rem;  border-width:0 0 1px 0; border-radius: 0; -webkkit-borde-radius:0;  font-size: 15px;  @include transition(ease, all, 0.5s);border-bottom: 1px solid rgba($color-secondary,0.5);color:$color-primary; 
+		&.active, &:focus{
+			outline: none; -webkit-outline: none; box-shadow:none; -webkit-box-shadow:none;   &+label{ top:0; left: 0; font-size: 13px; opacity: 1} 
+		}
+		&:focus{ border-bottom: 1px solid $color-primary;  color:  $color-primary; &+label{ color:  $color-primary; }}
+		&::placeholder{ color: rgba(133, 150, 174, 0.5);}	
+	}
+	.input-group{
+		position: initial;
+		label{ top:0; left: 0; font-size: 13px; opacity: 1}
+		.input-group-text{ background: none; border-width: 0 0 1px 0; border-color:  rgba($color-secondary,0.5); border-radius: 0; max-height: 35px; color: $color-primary;}
+	}
+}
+.input-group-rounded{ 
+	 border-radius: 30px;
+	*:first-child{ border-radius: 30px 0 0 30px}
+	*:last-child .btn{ border-radius:0 30px 30px 0}
+}

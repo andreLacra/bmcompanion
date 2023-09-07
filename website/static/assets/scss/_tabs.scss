@@ -1,0 +1,16 @@
+.nav-tabs{
+	border: 0;border-bottom: 1px solid rgba( $blue, 0.2);
+	.nav-item{
+		border: 0;
+		.nav-link{
+			border: 0; opacity: 0.5;  padding: 5px 10px; line-height: 30px; border-radius: 0; -ms-border-radius:0; -moz-border-radius:0; color: $color-primary;
+			&:hover{ background: none; border: 0;}
+			&.active{ background: none; border: 0; border-bottom-width: 4px; border-bottom-style: solid; opacity: 1; line-height: 26px;}
+		}
+	}
+	&.bg-success, &.bg-warning, &.bg-primary, &.bg-danger,&.gradient-success, &.gradient-warning, &.gradient-primary, &.gradient-danger{
+		.active{ border-bottom-color: rgba(255, 255, 255, 0.6)}
+	} 
+    
+}
+.tab-content>.active{ opacity: 1}

@@ -1,0 +1,8 @@
+.dropzone {
+    min-height: 150px; border: 2px dashed  rgba($black, 0.2); background-color: rgba($blue, 0.1); padding: 20px 20px;
+    .dropzone .dz-message {  margin-top: 40px;}       
+}
+.custom-dropzone {  
+    min-height: 150px;  border: 2px dashed $blue; background-color: rgba($blue, 0.1) ;  padding: 20px 20px;
+    .custom-dropzone h3 {  margin-top: 10px;} 
+}

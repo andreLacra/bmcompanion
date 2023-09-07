@@ -1,0 +1,20 @@
+.card{
+	background-color: $cards-color;
+	.card-header{ 
+		background-color:rgba($cards-color, 0.1); border: 0; font-size: 16px; line-height: 20px; padding: 10px 15px; 
+		.card-title{ margin: 0; font-weight: 400; font-size: 18px; line-height: 24px;} 
+		.icon{ vertical-align: middle; }
+		.nav-pills{ .nav-link{ border-radius: 20px; -webkit-border-radius: 20px; -ms-border-radius: 20px; }}
+		.dropdown{
+			display: inline-block; float: right;
+			.dropdown-menu{ line-height: 16px;}
+			.dropdown-toggle:after{ display: none}
+		}
+	}
+	.card{background-color:lighten($cards-color, 2%);}
+    .card-body{ position: relative; padding: 15px; p:last-child{ margin-bottom: 0}}
+	.card-footer{background-color:rgba($cards-color, 0.1); padding: 10px 15px; }
+	.progress{  &.bottom{ position: absolute; left: 0; bottom: 0; width: 100%;}}
+	.progress-sm.light{ opacity: 0.5}
+}
+.icon-background{ color: $color-secondary; height: 100%; width: 100%; z-index:0; line-height: 120px; position: absolute; left: 0; top: 0;  opacity: 0.15; text-align: center; font-size: 70px;  &+div{z-index: 1}}

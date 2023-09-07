@@ -1,0 +1,7 @@
+.pricing{
+	overflow: visible;
+	.icon{ height: 80px; width: 80px; line-height: 76px;  vertical-align: middle; display: inline-block;
+		&.overlay{ margin-top: -60px;}
+	}
+	.card-footer.overlay-bottom{ margin-bottom: -35px;}
+}

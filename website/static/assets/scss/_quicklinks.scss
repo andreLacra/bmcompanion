@@ -1,0 +1,18 @@
+.quicklinks{
+	padding: 0px; display: block; float: left; width: 100%; margin-bottom: 0;
+	.item{
+		width: 33.33%; float: left; padding: 0px;
+		a{
+			padding: 10px; display: block; border-right: 1px solid $border-color;  border-top: 1px solid $border-color; position: relative;
+			&:nth-child(3n){ border-right: 0}
+			i{ font-size: 24px;height: 80px; line-height: 84px; width: 100%; display: block; border-radius: 5px; background: rgba(255, 255, 255, 0.2); text-align: center; color:$color-primary; }
+			&:hover{ text-decoration: none; i{font-size: 30px; background: rgba(255, 255, 255, 0.4);} }
+			span{ color: $color-secondary; position: absolute; left: 0; bottom: 15px; line-height: 16px; font-size: 12px; display: block; width: 100%; text-align: center; & +i{line-height: 64px; }}
+		}
+	}
+	
+}
+.bg-success, &.bg-primary, &.bg-danger, &.bg-warning, &.bg-info, &.bg-secondary, .gradient-success, &.gradient-primary, &.gradient-danger, &.gradient-warning, &.gradient-info, &.gradient-secondary{ 
+	.title{ border-bottom-color: rgba(255, 255, 255, 0.2) }
+	& >.quicklinks{ .item{ a{ border: 0 !important;  i{color:#ffffff; }  span{ color: #ffffff ; }   &:hover{ i{ @include box-shadow(0, 3px, 8px, rgba(0, 0, 0, 0.05));}} }} }
+}

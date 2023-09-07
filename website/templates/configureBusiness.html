@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+
+    <!-- fontawesome icons CSS -->
+    <link rel="stylesheet" href="../static/assets/vendor/fontawesome4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <!-- Custome scrollbar CSS -->
+    <link rel="stylesheet"
+        href="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css"
+        type="text/css">
+
+    <!-- multielect CSS -->
+    <link rel="stylesheet" href="../static/assets/vendor/loumultiselect/css/multi-select.css" type="text/css">
+
+    <!-- Bootstrap multielect CSS -->
+    <link rel="stylesheet"
+        href="../static/assets/vendor/bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css" type="text/css">
+
+    <!-- framework CSS -->
+    <link id="theme" rel="stylesheet" href="../static/assets/css/style-helpdesk.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/assets/css/style_check.css">
+
+    <link rel="icon" href="../static/assets/img/logo.png">
+
+    <title>BMC | Configure Business</title>
+</head>
+
+<body class="sticky-footer">
+    <div class="loader-logo">
+        <img src="../static/assets/img/logo.png" alt="bootstrap template design by maxartkiller">
+        <br>
+        <div class="loader-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="wrapper" style="margin-bottom: 70px !important;">
+        <!-- header starts -->
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar">
+                <div class="d-flex">
+                    <a class="navbar-brand" href="/dashboard">
+                        <img src="../static/assets/img/logo.png" alt="">
+                        <h5>
+                            <span>Business Matching Companion</span>
+                        </h5>
+                    </a>
+                </div>
+                <div class="d-flex ml-auto" id="navbarCollapse">
+
+                    <div class="d-block">
+
+                        <div class="dropdown float-left">
+                            <button class="btn btn-link rounded-0 dropdown-toggle float-right user-profile"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+                                <span class="figure avatar30 rounded-circle m-0">
+                                    <img src="../static/assets/img/userLogo.png" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="/signout">Signout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- header ends -->
+
+
+
+        <!-- main container starts -->
+        {% if showConfigure is not false %}
+        <div class="main-container">
+            <div class="container-fluid mb-3 position-relative bg-purple">
+                <div class="row">
+                    <div class="container">
+                        <div class="row page-title-row">
+                            <div class="col-8">
+                                <h2 class="page-title text-white">Configure {{ business_to_configure.business_name }}
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="#" class="btn-sm btn btn-success mt-1">
+                                    <i class="fa fa-star"></i>
+                                </a>
+                                <button type="button" class="btn-sm btn btn-primary ml-2 mt-1" id="color-setting">
+                                    <i class="fa fa-cogs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin page content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        {% if message is not none %}
+                        <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-12">
+                        <div class="card rounded-0 border-0 mb-3">
+                            <div class="card-header scroll-y">
+                                <h5 class="sub-title text-dark">
+                                    <i class="mr-2 fa fa-edit text-dark"></i>Configure Business
+                                </h5>
+                            </div>
+                            <form action="/configureBusiness/{{ business_to_configure.id }}"
+                                enctype="multipart/form-data" method="post">
+                                <div class="card-body" style="height: 320px; overflow-y: scroll;">
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">Business Logo:</label>
+                                        <div class="col-sm-6">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="logo-data"
+                                                    name="logo-data" required>
+                                                <label class="custom-file-label" for="validatedCustomFile">Choose
+                                                    file...</label>
+                                                <div class="invalid-feedback">Please select an image</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">Business Name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required class="form-control" id="business-name"
+                                                name="business-name" placeholder="Business Name"
+                                                value="{{ business_to_configure.business_name }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">Organization
+                                            Membership (Optional):</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="org-membership"
+                                                name="org-membership" placeholder="Organization Membership"
+                                                value="{{ business_to_configure.organization }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail3" class="col-sm-3 col-form-label">Email:</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" required class="form-control" id="business-email"
+                                                name="business-email" placeholder="Business Email"
+                                                value="{{ business_to_configure.business_email }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail3" class="col-sm-3 col-form-label">Address:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required class="form-control" id="business-address"
+                                                name="business-address" placeholder="Business Address"
+                                                value="{{ business_to_configure.business_address }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail3" class="col-sm-3 col-form-label">Phone Number:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required class="form-control" id="business-number"
+                                                name="business-number" placeholder="Phone Number"
+                                                value="{{ business_to_configure.business_phone }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail3" class="col-sm-3 col-form-label">Viber Number:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required class="form-control" id="viber-number"
+                                                name="viber-number" placeholder="Viber Number"
+                                                value="{{ business_to_configure.viber }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail3" class="col-sm-3 col-form-label">WhatsApp
+                                            Number:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required class="form-control" id="whatsapp-number"
+                                                name="whatsapp-number" placeholder="WhatsApp Number"
+                                                value="{{ business_to_configure.whatsapp }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">LinkedIn
+                                            Link (Optional):</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="linkedin-link"
+                                                name="linkedin-link" placeholder="LinkedIn Link"
+                                                value="{{ business_to_configure.linkedin_link }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">YouTube Link
+                                            (Optional):</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="youtube-link"
+                                                name="youtube-link" placeholder="YouTube Link"
+                                                value="{{ business_to_configure.youtube_link }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">Facebook
+                                            Link (Optional):</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="fb-link" name="fb-link"
+                                                placeholder="Facebook Link" value="{{ business_to_configure.fb_link }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-3 col-form-label">Twitter
+                                            Link (Optional):</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="twitter-link"
+                                                name="twitter-link" placeholder="Twitter Link"
+                                                value="{{ business_to_configure.twitter_link }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="staticEmail3" class="col-sm-3 col-form-label">Description:</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" rows="3"
+                                                placeholder="Write something about your business"
+                                                id="business-description" name="business-description"
+                                                required>{{ business_to_configure.business_desc }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit and Cancel -->
+                                <div class="card-footer scroll-y">
+                                    <div class="d-flex justify-content-end mt-10">
+                                        <div class="row">
+                                            <div class="col"><a href="/dashboard"><button type="button"
+                                                        class="btn btn-danger">Close</button></a>
+                                            </div>
+                                            <div class="col"><button class="btn btn-primary btn-block col"
+                                                    type="submit">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Submit and Cancel -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% else %}
+        <h1 class="text-dark" style="margin-top: 40px !important;">Error. No business found :( </h1>
+        {% endif %}
+        <!-- main container ends -->
+
+    </div>
+    <!-- wrapper ends -->
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/assets/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../static/assets/vendor/popper.min.js"></script>
+    <script src="../static/assets/vendor/bootstrap-4.1.3/bootstrap.min.js"></script>
+
+    <!-- scrollbars -->
+    <script
+        src="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.min.js"></script>
+
+    <!-- Circular progress -->
+    <script src="../static/assets/vendor/cicular_progress/circle-progress.min.js"></script>
+
+
+    <!-- Other JavaScript -->
+    <script src="../static/assets/js/main.js"></script>
+
+    <script>
+        "use strict";
+        $('#my-select').multiSelect();
+        $('#bootstrap_multiselect, #bootstrap_multiselect_single, #bootstrap_multiselect_optgroups').multiselect({ buttonWidth: '260px' });
+        $('#example-post').multiselect({ includeSelectAllOption: true, enableFiltering: true, buttonWidth: '200px' });
+    </script>
+
+
+</body>
+
+</html>

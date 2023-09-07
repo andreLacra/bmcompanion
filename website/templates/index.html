@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+
+	<!-- fontawesome icons CSS -->
+	<link rel="stylesheet" href="../static/assets/vendor/fontawesome4.7.0/css/font-awesome.min.css" type="text/css">
+
+	<!-- Custome scrollbar CSS -->
+	<link rel="stylesheet"
+		href="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css"
+		type="text/css">
+
+	<!-- framework CSS -->
+	<link id="theme" rel="stylesheet" href="../static/assets/css/style-helpdesk.css" type="text/css">
+
+
+	<title>Matching Business | Dashboard</title>
+</head>
+
+<body class="fixed-header sticky-footer">
+	<div class="loader-logo">
+		<img src="../static/assets/img/logo.png" alt="bootstrap template design by maxartkiller">
+		<br>
+		<div class="loader-ellipsis">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<!-- header starts -->
+		<header class="border-bottom">
+			<!-- Fixed navbar -->
+			<nav class="navbar">
+				<div class="d-flex">
+					<button class="btn btn-link sq-btn rounded-0 border-right " type="button" id="sidebar-left">
+						<span class="fa fa-bars"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img src="../static/assets/img/logo.png" alt="">
+						<h5 class="text-uppercase">
+							<span>Craftoob</span>
+						</h5>
+					</a>
+				</div>
+				<div class="d-flex ml-auto" id="navbarCollapse">
+
+					<div class="d-block">
+
+						<div class="dropdown float-left">
+							<button class="btn btn-link rounded-0 dropdown-toggle float-right user-profile"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+								<span class="figure avatar30 rounded-circle m-0">
+									<img src="../static/assets/img/user1.png" alt="">
+								</span>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="#">Profile</a>
+								<a class="dropdown-item" href="#">Settings</a>
+								<a class="dropdown-item" href="#">Logout</a>
+							</div>
+						</div>
+
+						<button class="btn btn-link sq-btn border-left rounded-0 e" type="button" id="sidebar-right">
+							<span class="icon fa fa-angle-double-left"></span>
+						</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- header ends -->
+
+		<!-- sidebar starts -->
+		<div class="sidebar left border-right scroll-y">
+			<ul class="nav flex-column " id="side-menu">
+				<li class="title-nav">Welcome to Craftoob</li>
+				<li class="nav-item">
+					<a href="index.html" target="_self"><i class="icon fa fa-home"></i> Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="about.html" target="_self"><i class="icon fa fa-building"></i> About</a>
+				</li>
+				<li class="nav-item">
+					<a href="blogs.html" target="_self"><i class="icon fa fa-file-text-o"></i> Blog</a>
+				</li>
+				<li class="nav-item">
+					<a href="contactus.html" target="_self"><i class="icon fa fa-envelope"></i> Contact us</a>
+				</li>
+				<li class="nav-item">
+					<a href="profile.html" target="_self"><i class="icon fa fa-user"></i> Profile</a>
+				</li>
+				<li class="nav-item">
+					<a href="dashboard.html" target="_self"><i class="icon fa fa-tachometer"></i> Dashboard</a>
+				</li>
+				<li class="title-nav mt-2">Explore Now!</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-newspaper-o"></i> Layout
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="grid.html" class="nav-link ">Grid</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="media-object.html">Media Object</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="colors.html">Color Scheme</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-snowflake-o"></i> Contents
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="typography.html" class="nav-link ">Typography</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="avatar.html">Avatar</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="table-blocks.html">Table</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-th"></i> Rich Components
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="card-blocks.html" class="nav-link ">Card Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="carousel-blocks.html">Carousel Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="chart-blocks.html">Charts Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="chat-blocks.html">Chat Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="event-blocks.html">Event Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="large-dropdown.html">Large Dropdowns</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="file-blocks.html">File Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="form-blocks.html">Form Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="vectormap-blocks.html">VectorMap Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="media-blocks.html">Media Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="navbar-blocks.html">Navbar Block</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="news-blocks.html">News Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="pricing-blocks.html">Pricing Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="product-blocks.html">Product Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="progress-range-blocks.html">Progress and Range</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="rating-blocks.html">Rating Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="summary-blocks.html">Summary Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="timeline-blocks.html">Timeline Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="user-blocks.html">User Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="userlist-blocks.html">Userlist Blocks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="wizard-blocks.html">Wizard Blocks</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-bold"></i> Default Components
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="alerts.html" class="nav-link ">Alerts</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="badges.html">Badges</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="breadcrumb.html">Breadcrumb</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="buttons.html">Buttons</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="button-group.html">Button Group</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="dropdown.html">Dropdown</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="form-elements.html">Form Elements</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="collapse.html">Collapse</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="input-group.html">Input Group</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="jumbotron.html">Jumbotron</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="pagination.html">Pagination</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="popover.html">Popover</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="tooltip.html">Tooltip</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="modal.html">Modal</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-star"></i> Other Components
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="gallery.html" class="nav-link ">Gallery</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="picker.html">Picker</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="editor.html">Editor</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="loader.html">Loader</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="autocomplete.html">Auto-Complete</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="toastmessage.html">Toast Message</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="introdialogues.html">Intro Tour</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="clipboard.html">Clipboard</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="multiselect.html">Multiselect</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="datatable.html">DataTable</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="calendar.html">Calendar</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+
+				<li class="title-nav mt-2">Creative Pages</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-user-circle"></i> Sign in
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="signin1.html" class="nav-link ">Sign in 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="signin2.html" class="nav-link ">Sign in 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="signin3.html" class="nav-link ">Sign in 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="signin4.html" class="nav-link ">Sign in 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="signin5.html" class="nav-link ">Sign in 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-user-plus"></i> Sign Up
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="signup1.html" class="nav-link ">Sign up 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="signup2.html" class="nav-link ">Sign up 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="signup3.html" class="nav-link ">Sign up 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="signup4.html" class="nav-link ">Sign up 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="signup5.html" class="nav-link ">Sign up 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-exclamation"></i> Error
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="error1.html" class="nav-link ">Error 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="error2.html" class="nav-link ">Error 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="error3.html" class="nav-link ">Error 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="error4.html" class="nav-link ">Error 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="error5.html" class="nav-link ">Error 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-ban"></i> Error-404
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="error-4041.html" class="nav-link ">Error-404 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-4042.html" class="nav-link ">Error-404 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-4043.html" class="nav-link ">Error-404 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-4044.html" class="nav-link ">Error-404 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-4045.html" class="nav-link ">Error-404 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-exclamation-triangle"></i> Error-500
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="error-5001.html" class="nav-link ">Error-500 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-5002.html" class="nav-link ">Error-500 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-5003.html" class="nav-link ">Error-500 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-5004.html" class="nav-link ">Error-500 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="error-5005.html" class="nav-link ">Error-500 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-clock-o"></i> Comming soon
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="comming-soon1.html" class="nav-link ">Comming-soon 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="comming-soon2.html" class="nav-link ">Comming soon 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="comming-soon3.html" class="nav-link ">Comming soon 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="comming-soon4.html" class="nav-link ">Comming soon 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="comming-soon5.html" class="nav-link ">Comming soon 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-question-circle-o"></i> FAQs
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="faqs1.html" class="nav-link ">FAQs 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="faqs2.html" class="nav-link ">FAQs 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="faqs3.html" class="nav-link ">FAQs 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="faqs4.html" class="nav-link ">FAQs 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="faqs5.html" class="nav-link ">FAQs 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+				<li class="nav-item ">
+					<a href="javascript:void(0)" class="menudropdown nav-link">
+						<i class="icon fa fa-envelope"></i> Contact us
+						<i class="arrow fa fa-angle-down"></i>
+					</a>
+					<ul class="nav flex-column nav-second-level">
+						<li class="nav-item">
+							<a href="contactus1.html" class="nav-link ">Contact us 1</a>
+						</li>
+						<li class="nav-item">
+							<a href="contactus2.html" class="nav-link ">Contact us 2</a>
+						</li>
+						<li class="nav-item">
+							<a href="contactus3.html" class="nav-link ">Contact us 3</a>
+						</li>
+						<li class="nav-item">
+							<a href="contactus4.html" class="nav-link ">Contact us 4</a>
+						</li>
+						<li class="nav-item">
+							<a href="contactus5.html" class="nav-link ">Contact us 5</a>
+						</li>
+					</ul>
+					<!-- .nav-second-level / -->
+				</li>
+			</ul>
+			<hr>
+			<h4 class="capstitle text-uppercase">Quote for the day</h4>
+			<div class="media px-3">
+				<div class="media-body">
+					<blockquote class="blockquote">
+						<p class="mb-2 lead">Winners don't do different things, they do thing differently</p>
+						<footer class="blockquote-footer">By
+							<cite title="Source Title">Shiv Khera</cite>
+						</footer>
+					</blockquote>
+				</div>
+			</div>
+			<br>
+		</div>
+		<!-- sidebar Ends -->
+
+		<!-- main container starts -->
+		<div class="main-container">
+			<!-- Begin page content -->
+			<div id="homecarousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#homecarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#homecarousel" data-slide-to="1"></li>
+					<li data-target="#homecarousel" data-slide-to="2"></li>
+				</ol>
+				<div class="background bg-dark">
+					<img src="assets/img/banner.png" alt="" class="float-right w-100">
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active align-content-center  vhi-full">
+						<div class="carousel-caption mb-0 align-self-center">
+							<img src="assets/img/bannerthumb.png" alt="..." class="mw-100">
+							<h1 class="display-4 mt-3">Craftoob</h1>
+							<h3 class="f-light mt-0">Bootstrap<sup><small>4.1</small></sup> HTML</h3>
+							<br>
+							<a href="#" class="btn btn-success rounded-5 mb-3">Learn More</a>
+						</div>
+					</div>
+					<div class="carousel-item align-content-center   vhi-full">
+						<div class="carousel-caption mb-0 align-self-center">
+							<img src="assets/img/bannerthumb.png" alt="..." class="mw-100">
+							<h1 class="display-4 mt-3">Craftoob</h1>
+							<h3 class="f-light mt-0">Unique & Creative</h3>
+							<br>
+							<a href="#" class="btn btn-success rounded-5 mb-3">Learn More</a>
+						</div>
+					</div>
+					<div class="carousel-item align-content-center   vhi-full">
+						<div class="carousel-caption mb-0 align-self-center">
+							<img src="assets/img/bannerthumb.png" alt="..." class="mw-100">
+							<h1 class="display-4 mt-3">Craftoob</h1>
+							<h3 class="f-light mt-0">Mobile HTML</h3>
+							<br>
+							<a href="#" class="btn btn-success rounded-5 mb-3">Learn More</a>
+						</div>
+					</div>
+				</div>
+
+				<a class="carousel-control-prev" href="#homecarousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#homecarousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+			<div class="container-fluid bg-white">
+				<div class="row">
+					<div class="container py-3 text-center">
+						<p class="text-uppercase my-2 text-secondary">About Craftoob</p>
+						<h2 class="display-4 mb-3">Available Templates</h2>
+						<div class="row">
+							<div class="col-12 col-md-6 py-3 text-center">
+								<i
+									class="figure avatar100 rounded-circle gradient-success border-0 text-white fa fa-desktop mr-0"></i>
+								<br>
+								<br>
+								<h2 class="f-light">Visitor</h2>
+								<p>Our front end template comes with home, about, blog, forum, community pages. Also You
+									can merge admin template layout compontents with front end template like error,
+									contact us pages.</p>
+							</div>
+							<div class="col-12 col-md-6 py-3 text-center">
+								<i
+									class="figure avatar100 rounded-circle gradient-success border-0 text-white fa fa-dashboard mr-0"></i>
+								<br>
+								<br>
+								<h2 class="f-light">Admin</h2>
+								<p>Craftoob Admin template helps to track records and detailed data about tickets and
+									analytics. You can extend expand other pages with components. There are 45+ color
+									combination availabel.</p>
+							</div>
+							<div class="col-12 col-md-6 py-3 text-center">
+								<i
+									class="figure avatar100 rounded-circle gradient-success border-0 text-white fa fa-twitter mr-0"></i>
+								<br>
+								<br>
+								<h2 class="f-light">Bootstrap Design</h2>
+								<p>Template Built with Bootstrap Template Design and bootstrap version 4.1 we are
+									growing and updating demo pages and expanding our template. You have flexibility
+									available from template.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="container py-3">
+				<p class="text-uppercase my-2 text-secondary  text-center">Highlights</p>
+				<h2 class="display-4 mb-4  text-center">Design, Quality & Flexibility</h2>
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<div class="card rounded-0 border-0 mb-3">
+							<figure class="w-100">
+								<img src="assets/img/designquality3.png" alt="user image" class=" w-100  ">
+							</figure>
+							<div class="card-body p-4">
+								<p class="text-uppercase text-secondary">Design</p>
+								<h5 class="my-3">We have creatively design and code which makes easy to customization
+								</h5>
+								<p class="text-secondary">We believe in flexibility of design with consitancy in user
+									interface. Combination of both design and code will provide greate user experience.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 ">
+						<div class="card rounded-0 border-0 mb-3">
+							<figure class="w-100">
+								<img src="assets/img/designquality2.png" alt="user image" class=" w-100  ">
+							</figure>
+							<div class="card-body p-4">
+								<p class="text-uppercase text-secondary">Quality</p>
+								<h5 class="my-3">We have go through the validation and intutive comments added</h5>
+								<p class="text-secondary">Validation is required many time to make sure everything
+									working fine. Some of plugin requires special treatment and we change & adopt.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 ">
+						<div class="card rounded-0 border-0 mb-3">
+							<figure class="w-100">
+								<img src="assets/img/designquality1.png" alt="user image" class=" w-100  ">
+							</figure>
+							<div class="card-body p-4">
+								<p class="text-uppercase text-secondary">Flexiblity</p>
+								<h5 class="my-3">Template provides wide range of customized components to use</h5>
+								<p class="text-secondary">Available components with many stylesheet and also you can use
+									different customized class to create new component stlye best flexibliliyy ever.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div class="container-fluid position-relative">
+				<div class="row">
+					<div class="container text-center py-3">
+						<p class="text-uppercase my-2">Craftoob Admin</p>
+						<h2 class="display-4 mb-3">Components & Plugins</h2>
+						<p>HelpDsek admin template comes with thousands of components stlyes and with different color
+							combination. Many of the third parties plugins are custmized to match with template styling.
+							More similar look provides consitancy in UI design. Here few components are mentioned below:
+						</p>
+						<br>
+						<div class="row text-left">
+							<div class="col-12">
+								<ul class="pl-4">
+									<li>Footables</li>
+									<li>Avatar images</li>
+									<li>Cards</li>
+									<li>Carousel</li>
+									<li>Charts</li>
+									<li>Event</li>
+									<li>Chat</li>
+									<li>Forms</li>
+									<li>Files</li>
+									<li>Themes</li>
+									<li>Typo utility</li>
+									<li>Tables</li>
+									<li>DatePicker</li>
+									<li>Footable</li>
+									<li>Circular progress</li>
+									<li>Chartjs</li>
+									<li>AmCharts</li>
+									<li>FontAwesome</li>
+									<li>Highlight js</li>
+									<li>JqueryVector map</li>
+									<li>Custom-scrollbar</li>
+									<li>nouislider</li>
+									<li>Sparklines</li>
+									<li>and Many more things...</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="container-fluid position-relative">
+				<div class="background   bg-dark">
+					<img src="assets/img/banner.png" alt="" class="float-right w-100">
+				</div>
+				<div class="row">
+					<div class="container py-3">
+						<p class="text-uppercase my-2 text-white  text-center">Testimonials</p>
+						<h2 class="display-4 mb-4  text-center  text-white">What people are saying?</h2>
+						<div class="row">
+							<div class="col-sm-12 col-md-6">
+								<div class="card rounded-0 border-0 mb-3">
+									<div class="card-body userlist_large">
+										<div class="media">
+											<br>
+											<div class="mb-0 lead">Craftoob Bootstrap template design is HTML template
+												based on Bootstrap 4.1 framework. This html template can be used in
+												various
+												business domains like Manufacturing, inventory, IT, administration etc.
+											</div>
+											<br>
+											<h5 class="text-warning my-1 w-100">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-half-o"></i>
+											</h5>
+											<div class="circle-profile circle-profile-sm mb-0">
+												<div class="line">
+													<hr>
+												</div>
+												<figure class="avatar60 rounded-circle mt-3">
+													<img src="assets/img/user4.png" alt="user image"
+														class="mCS_img_loaded">
+												</figure>
+											</div>
+											<div class="media-body">
+												<h4 class="mt-0">John Smith</h4>
+												<p class="mb-0">
+													<i class="fa fa-building-o"></i> CEO, Confidential, UK
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<div class="card rounded-0 border-0 mb-3">
+									<div class="card-body userlist_large">
+										<div class="media">
+											<br>
+											<div class="mb-0 lead">Craftoob Bootstrap template design is HTML template
+												based on Bootstrap 4.1 framework. This html template can be used in
+												various
+												business domains like Manufacturing, inventory, IT, administration etc.
+											</div>
+											<br>
+											<h5 class="text-warning my-1 w-100">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+											</h5>
+											<div class="circle-profile circle-profile-sm mb-0">
+												<div class="line">
+													<hr>
+												</div>
+												<figure class="avatar60 rounded-circle mt-3">
+													<img src="assets/img/user2.png" alt="user image"
+														class="mCS_img_loaded">
+												</figure>
+											</div>
+											<div class="media-body">
+												<h4 class="mt-0">John Smith</h4>
+												<p class="mb-0">
+													<i class="fa fa-building-o"></i> UX Proffesional, Confidential, AU
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<div class="card rounded-0 border-0 mb-3">
+									<div class="card-body userlist_large">
+										<div class="media">
+											<br>
+											<div class="mb-0 lead">Craftoob Bootstrap template design is HTML template
+												based on Bootstrap 4.1 framework. This html template can be used in
+												various
+												business domains like Manufacturing, inventory, IT, administration etc.
+											</div>
+											<br>
+											<h5 class="text-warning my-1 w-100">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+											</h5>
+											<div class="circle-profile circle-profile-sm mb-0">
+												<div class="line">
+													<hr>
+												</div>
+												<figure class="avatar60 rounded-circle mt-3">
+													<img src="assets/img/user3.png" alt="user image"
+														class="mCS_img_loaded">
+												</figure>
+											</div>
+											<div class="media-body">
+												<h4 class="mt-0">John Smith</h4>
+												<p class="mb-0">
+													<i class="fa fa-building-o"></i> VP, Confidential, USA
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="container pt-3">
+						<p class="text-uppercase text-center my-2 text-secondary">Reads</p>
+						<h2 class="display-4 text-center mb-3">Amazing Fresh Content</h2>
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="card rounded-0 border-0 mb-3">
+									<div class="card-body">
+										<p class="text-secondary">Trending | 25 July 2018</p>
+										<h5 class="mb-3">New version of Admin dashboard has been released last friday
+										</h5>
+										<p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing
+											elitut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem
+											ipsum dolor sit amet.<br><br><br>
+											<a class="btn btn-outline-secondary" href="">Read more</a>
+										</p>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="card rounded-0 border-0 mb-3">
+									<div class="card-body">
+										<p class="text-secondary">Trending | 25 July 2018</p>
+										<h5 class="mb-3">New version of Admin dashboard has been released last friday
+										</h5>
+										<p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing
+											elitut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem
+											ipsum dolor sit amet.<br><br><br>
+											<a class="btn btn-outline-secondary" href="">Read more</a>
+										</p>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="card rounded-0 border-0 mb-3">
+									<div class="card-body">
+										<p class="text-secondary">Trending | 25 July 2018</p>
+										<h5 class="mb-3">New version of Admin dashboard has been released last friday
+										</h5>
+										<p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing
+											elitut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem
+											ipsum dolor sit amet.<br><br><br>
+											<a class="btn btn-outline-secondary" href="">Read more</a>
+										</p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- main container ends -->
+
+		<!-- sidebar right starts -->
+		<div class="sidebar border-left right">
+			<div class="title">
+				<i class="fa fa-subway text-success"></i> Highlights & Customize
+			</div>
+			<ul class="nav nav-tabs nav-justified" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active  border-success" id="tab1-tab" data-toggle="tab" href="#rightside"
+						role="tab" aria-controls="rightside" aria-selected="true">
+						<i class="fa fa-rocket"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link border-success" id="tab2-tab" data-toggle="tab" href="#chatlist" role="tab"
+						aria-controls="chatlist" aria-selected="false">
+						<i class="fa fa-comments"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link border-success" id="tab3-tab" data-toggle="tab" href="#setting" role="tab"
+						aria-controls="setting" aria-selected="false">
+						<i class="fa fa-cog"></i>
+					</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="rightside" role="tabpanel">
+					<div class="userlist_large ">
+						<div class="progress_profile " data-value="0.65" data-size="140" data-thickness="4"
+							data-animation-start-value="0" data-reverse="false"></div>
+						<div class="media">
+							<figure class="avatar120 rounded-circle m-auto">
+								<img src="assets/img/user1.png" alt="user image">
+							</figure>
+
+							<div class="media-body">
+								<h4 class="my-3">65%
+									<span class="text-secondary">Completed</span>
+								</h4>
+								<p>Fill up your requiredinformations and complete your profile to avail offers</p>
+								<button type="button" class="btn btn-primary">Complete your profile
+									<i class="fa fa-angle-right"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h4 class="capstitle text-uppercase">New Friend Request</h4>
+					<div class="list-unstyled userlist">
+						<div class="item">
+							<a class="media" href="#">
+								<figure class="avatar30 rounded-circle z2 align-self-start">
+									<img src="assets/img/user2.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">John Smith
+										<small class="float-right">1 min ago</small>
+									</h5>
+									New Jersey, UK
+								</div>
+							</a>
+							<div class="button-wrap">
+								<button type="button" class="btn btn-danger sq-btn">
+									<i class="fa fa-close"></i>
+								</button>
+								<button type="button" class="btn btn-success sq-btn">
+									<i class="fa fa-check"></i>
+								</button>
+							</div>
+						</div>
+						<div class="item">
+							<a class="media" href="#">
+								<figure class="avatar30 rounded-circle z2 align-self-start">
+									<img src="assets/img/user3.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">Astha Anwar
+										<small class="float-right">
+											<i class="circle-dot bg-success"></i> Online</small>
+									</h5>
+									New Jersey, UK
+								</div>
+							</a>
+							<div class="button-wrap">
+								<button type="button" class="btn btn-danger sq-btn">
+									<i class="fa fa-close"></i>
+								</button>
+								<button type="button" class="btn btn-success sq-btn">
+									<i class="fa fa-check"></i>
+								</button>
+							</div>
+						</div>
+						<div class="item">
+							<a class="media" href="#">
+								<figure class="avatar30 rounded-circle z2 align-self-start">
+									<img src="assets/img/user4.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">Tommy Boyoth
+										<small class="float-right">
+											<i class="circle-dot bg-warning"></i> Away</small>
+									</h5>
+									New Jersey, UK
+								</div>
+							</a>
+							<div class="button-wrap">
+								<button type="button" class="btn btn-danger sq-btn">
+									<i class="fa fa-close"></i>
+								</button>
+								<button type="button" class="btn btn-success sq-btn">
+									<i class="fa fa-check"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h4 class="capstitle text-uppercase">New Event Request</h4>
+					<div class="list-unstyled userlist">
+						<div class="item">
+							<a class="media" href="#">
+								<i class="align-self-start icon fa fa-calendar"></i>
+								<div class="media-body">
+									<h5>20 February, 2017</h5>
+									<p>New Jersey, UK</p>
+									Musical night festival seasons, Drama and comedy cultural family show.
+								</div>
+							</a>
+						</div>
+						<div class="item">
+							<a class="media" href="#">
+								<i class="align-self-start icon fa fa-calendar"></i>
+								<div class="media-body">
+									<h5>20 February, 2017</h5>
+									<p>New Jersey, UK</p>
+									Musical night festival seasons, Drama and comedy cultural family show.
+								</div>
+							</a>
+						</div>
+					</div>
+					<hr>
+					<h4 class="capstitle text-uppercase">Last Message</h4>
+					<div class="list-unstyled userlist">
+						<div class="item">
+							<div class="media">
+								<figure class="avatar30 rounded-circle z2 align-self-start">
+									<img src="assets/img/user4.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">Tommy Boyoth
+										<small>
+											<i class="circle-dot bg-warning"></i> Away</small>
+									</h5>
+									<p>New Jersey, UK</p>
+									Hi! Are you ready for Musical night festival seasons, Drama and comedy cultural
+									family show.
+									<br>
+									<br>
+									<button class="btn btn-sm btn-primary">
+										<i class="fa fa-reply"></i> Reply</button>
+									<button class="btn btn-sm btn-outline-danger">Dismiss</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h4 class="capstitle text-uppercase">Advertizing Block</h4>
+					<figure class="w-100 text-center m-0 col">
+						<img src="assets/img/maxartkiller_website.png" class="mw-100"
+							alt="maxartkiller, max art killer, web and ui designs">
+						<figcaption>
+							www.maxartkiller.in
+						</figcaption>
+					</figure>
+				</div>
+				<div class="tab-pane fade" id="chatlist" role="tabpanel">
+					<div class="list-unstyled userlist">
+						<a class="item" href="#">
+							<div class="media">
+								<figure class="avatar36 rounded-circle z2 align-self-start mr-3">
+									<img src="assets/img/user2.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">John Doe
+										<small class="float-right">1 min ago</small>
+									</h5>
+									Sent a message
+								</div>
+							</div>
+						</a>
+						<a class="item" href="#">
+							<div class="media">
+								<figure class="avatar36 rounded-circle z2 align-self-start mr-3">
+									<img src="assets/img/user3.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">
+										<span class="circle-dot bg-warning"></span>Astha Anwar
+										<small class="float-right">1 min ago</small>
+									</h5>
+									Sent a message
+								</div>
+							</div>
+						</a>
+						<a class="item" href="#">
+							<div class="media">
+								<figure class="avatar36 rounded-circle z2 align-self-start mr-3">
+									<img src="assets/img/user1.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">
+										<span class="circle-dot bg-danger"></span>Maxartkiller
+										<small class="float-right">1 min ago</small>
+									</h5>
+									Sent a message
+								</div>
+							</div>
+						</a>
+						<a class="item" href="#">
+							<div class="media">
+								<figure class="avatar36 rounded-circle z2 align-self-start mr-3">
+									<img src="assets/img/user4.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">
+										<span class="circle-dot bg-success"></span>Tommy Bayoth
+										<small class="float-right">1 hour ago</small>
+									</h5>
+									Sent a message
+								</div>
+							</div>
+						</a>
+						<a class="item" href="#">
+							<div class="media">
+								<figure class="avatar36 rounded-circle z2 align-self-start mr-3">
+									<img src="assets/img/user1.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">
+										<span class="circle-dot bg-danger"></span>Maxartkiller
+										<small class="float-right">1 min ago</small>
+									</h5>
+									Sent a message
+								</div>
+							</div>
+						</a>
+						<a class="item" href="#">
+							<div class="media">
+								<figure class="avatar36 rounded-circle z2 align-self-start mr-3">
+									<img src="assets/img/user4.png" alt="Generic placeholder image">
+								</figure>
+								<div class="media-body">
+									<h5 class="time-title">
+										<span class="circle-dot bg-success"></span>Tommy Bayoth
+										<small class="float-right">1 hour ago</small>
+									</h5>
+									Sent a message
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="setting" role="tabpanel">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<h6>Color Scheme</h6>
+							<p class="my-2 text-secondary">Full Background</p>
+							<div class="theme-color">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio1" name="style-sheet-color"
+										class="custom-control-input" checked>
+									<label class="custom-control-label bg-white border" for="customRadio1"
+										data-title="assets/css/style-helpdesk.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio2" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-blue border" for="customRadio2"
+										data-title="assets/css/style-dark-blue.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio3" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-purple border" for="customRadio3"
+										data-title="assets/css/style-dark-purple.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio4" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-maroon border" for="customRadio4"
+										data-title="assets/css/style-dark-maroon.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio5" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-grey border" for="customRadio5"
+										data-title="assets/css/style-dark-grey.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio6" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-pink border" for="customRadio6"
+										data-title="assets/css/style-dark-pink.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio7" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-brown border" for="customRadio7"
+										data-title="assets/css/style-dark-brown.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio8" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-green border" for="customRadio8"
+										data-title="assets/css/style-dark-green.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio1mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label red border" for="customRadio1mat"
+										data-title="assets/css/style-red.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio2mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label purple border" for="customRadio2mat"
+										data-title="assets/css/style-purple.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio4mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label blue border" for="customRadio4mat"
+										data-title="assets/css/style-blue.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio6mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label skyblue border" for="customRadio6mat"
+										data-title="assets/css/style-skyblue.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio5mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label teal border" for="customRadio5mat"
+										data-title="assets/css/style-teal.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio7mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label orange border" for="customRadio7mat"
+										data-title="assets/css/style-orange.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio3mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label brown border" for="customRadio3mat"
+										data-title="assets/css/style-brown.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio8mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label grey border" for="customRadio8mat"
+										data-title="assets/css/style-grey.css"></label>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<p class="my-2 text-secondary">Sidebar Background</p>
+							<div class="theme-color">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio11" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label bg-white border" for="customRadio11"
+										data-title="assets/css/style-helpdesk.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio21" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-blue border" for="customRadio21"
+										data-title="assets/css/style-dark-blue-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio31" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-purple border" for="customRadio31"
+										data-title="assets/css/style-dark-purple-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio41" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-maroon border" for="customRadio41"
+										data-title="assets/css/style-dark-maroon-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio51" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-grey border" for="customRadio51"
+										data-title="assets/css/style-dark-grey-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio61" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-pink border" for="customRadio61"
+										data-title="assets/css/style-dark-pink-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio71" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-brown border" for="customRadio71"
+										data-title="assets/css/style-dark-brown-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio81" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-green border" for="customRadio81"
+										data-title="assets/css/style-dark-green-sidebar.css"></label>
+								</div>
+
+
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio11mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label red border" for="customRadio11mat"
+										data-title="assets/css/style-red-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio21mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label purple border" for="customRadio21mat"
+										data-title="assets/css/style-purple-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio41mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label blue border" for="customRadio41mat"
+										data-title="assets/css/style-blue-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio61mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label skyblue border" for="customRadio61mat"
+										data-title="assets/css/style-skyblue-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio51mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label teal border" for="customRadio51mat"
+										data-title="assets/css/style-teal-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio71mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label orange border" for="customRadio71mat"
+										data-title="assets/css/style-orange-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio31mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label brown border" for="customRadio31mat"
+										data-title="assets/css/style-brown-sidebar.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio81mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label grey border" for="customRadio81mat"
+										data-title="assets/css/style-grey-sidebar.css"></label>
+								</div>
+
+								<div class="clearfix"></div>
+							</div>
+							<p class="my-2 text-secondary">Header+Sidebar Background</p>
+							<div class="theme-color">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio12" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label bg-white border" for="customRadio12"
+										data-title="assets/css/style-helpdesk.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio221" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-blue border" for="customRadio221"
+										data-title="assets/css/style-dark-blue-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio33" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-purple border" for="customRadio33"
+										data-title="assets/css/style-dark-purple-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio44" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-maroon border" for="customRadio44"
+										data-title="assets/css/style-dark-maroon-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio55" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-grey border" for="customRadio55"
+										data-title="assets/css/style-dark-grey-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio66" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-pink border" for="customRadio66"
+										data-title="assets/css/style-dark-pink-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio77" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-brown border" for="customRadio77"
+										data-title="assets/css/style-dark-brown-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio87" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label dark-green border" for="customRadio87"
+										data-title="assets/css/style-dark-green-header.css"></label>
+								</div>
+
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio12mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label red border" for="customRadio12mat"
+										data-title="assets/css/style-red-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio22mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label purple border" for="customRadio22mat"
+										data-title="assets/css/style-purple-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio42mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label blue border" for="customRadio42mat"
+										data-title="assets/css/style-blue-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio62mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label skyblue border" for="customRadio62mat"
+										data-title="assets/css/style-skyblue-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio52mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label teal border" for="customRadio52mat"
+										data-title="assets/css/style-teal-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio72mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label orange border" for="customRadio72mat"
+										data-title="assets/css/style-orange-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio32mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label brown border" for="customRadio32mat"
+										data-title="assets/css/style-brown-header.css"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio82mat" name="style-sheet-color"
+										class="custom-control-input">
+									<label class="custom-control-label grey border" for="customRadio82mat"
+										data-title="assets/css/style-grey-header.css"></label>
+								</div>
+
+								<div class="clearfix"></div>
+							</div>
+						</li>
+						<li class="list-group-item">
+							<h6>Sidebar Background Image</h6>
+							<p class="text-secondary">Bottom Image</p>
+							<div class="sidebar-image">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio12img" name="background-image-sidebar"
+										class="custom-control-input" checked>
+									<label class="custom-control-label  border" for="customRadio12img"
+										data-title="none"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio22img" name="background-image-sidebar"
+										class="custom-control-input">
+									<label class="custom-control-label  border" for="customRadio22img"
+										data-title="assets/img/sidebar-1.png">
+										<img src="assets/img/sidebar-11.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio32img" name="background-image-sidebar"
+										class="custom-control-input">
+									<label class="custom-control-label  border" for="customRadio32img"
+										data-title="assets/img/sidebar-2.png">
+										<img src="assets/img/sidebar-12.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio43img" name="background-image-sidebar"
+										class="custom-control-input">
+									<label class="custom-control-label  border" for="customRadio43img"
+										data-title="assets/img/sidebar-3.png">
+										<img src="assets/img/sidebar-13.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio52img" name="background-image-sidebar"
+										class="custom-control-input">
+									<label class="custom-control-label  border" for="customRadio52img"
+										data-title="assets/img/sidebar-4.png">
+										<img src="assets/img/sidebar-14.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio63img" name="background-image-sidebar"
+										class="custom-control-input">
+									<label class="custom-control-label  border" for="customRadio63img"
+										data-title="assets/img/sidebar-5.png">
+										<img src="assets/img/sidebar-15.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<p class="my-2 text-secondary">Texture Image
+								<br>
+								<small>Texture will look good with background in dark shades</small>
+							</p>
+							<div class="sidebar-image">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio14img" name="background-image-sidebar"
+										class="custom-control-input bg-repeat">
+									<label class="custom-control-label  border" for="customRadio14img"
+										data-title="none"></label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio24img" name="background-image-sidebar"
+										class="custom-control-input bg-repeat">
+									<label class="custom-control-label  border" for="customRadio24img"
+										data-title="assets/img/sidebar-texture1.png">
+										<img src="assets/img/pattern-1.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio34img" name="background-image-sidebar"
+										class="custom-control-input bg-repeat">
+									<label class="custom-control-label  border" for="customRadio34img"
+										data-title="assets/img/sidebar-texture2.png">
+										<img src="assets/img/pattern-2.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio44img" name="background-image-sidebar"
+										class="custom-control-input bg-repeat">
+									<label class="custom-control-label  border" for="customRadio44img"
+										data-title="assets/img/sidebar-texture3.png">
+										<img src="assets/img/pattern-3.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio54img" name="background-image-sidebar"
+										class="custom-control-input bg-repeat">
+									<label class="custom-control-label  border" for="customRadio54img"
+										data-title="assets/img/sidebar-texture4.png">
+										<img src="assets/img/pattern-4.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio64img" name="background-image-sidebar"
+										class="custom-control-input bg-repeat">
+									<label class="custom-control-label  border" for="customRadio64img"
+										data-title="assets/img/sidebar-texture5.png">
+										<img src="assets/img/pattern-5.png" alt="" class="w-100">
+									</label>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!-- sidebar right ends -->
+
+	</div>
+	<!-- wrapper ends -->
+
+
+	<!-- footer starts -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6">Designed with
+					<i class="text-danger fa fa-heart"></i> by
+					<span>maxartkiller</span>
+					<img src="../static/assets/img/flag.png" alt="India">
+				</div>
+				<div class="col-12 col-md-6 text-right">
+					<a href="#" class="">Privacy Policy</a> |
+					<a href="#" class="">Terms of use</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer ends -->
+
+
+
+
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../static/assets/vendor/jquery-3.2.1.min.js"></script>
+	<script src="../static/assets/vendor/popper.min.js"></script>
+	<script src="../static/assets/vendor/bootstrap-4.1.3/bootstrap.min.js"></script>
+
+	<!--Cookie js for theme chooser and applying it -->
+	<script src="../static/assets/vendor/cookie/jquery.cookie.js"></script>
+
+	<!-- Circular progress -->
+	<script
+		src="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.min.js"></script>
+
+	<!-- Circular progress -->
+	<script src="../static/assets/vendor/cicular_progress/circle-progress.min.js"></script>
+
+	<!-- Sparklines chartsw -->
+	<script src="../static/assets/vendor/sparklines/jquery.sparkline.min.js"></script>
+
+	<!-- Other JavaScript -->
+	<script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>

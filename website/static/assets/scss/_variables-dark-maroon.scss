@@ -1,0 +1,56 @@
+//base colors 
+$base-background: #521e2e;
+$color-primary: #ffffff;
+$color-secondary: rgba($color-primary, 0.8);
+$color-text: rgba($color-primary, 0.7);
+
+//card color
+$cards-color: lighten($base-background,10%);
+
+//sidebar colors 
+$sidebar-background: lighten($base-background,10%);
+$sidebar-color1: #ffffff;
+$sidebar-color2: rgba($sidebar-color1, 0.8);
+$sidebar-color3: rgba($sidebar-color1, 0.7);
+$sidebarmenu-active: $blue;
+$sidebarmenu-active-color: $white;
+
+//header colors 
+$header-background: lighten($base-background,10%);
+$header-fontcolor1: #ffffff;
+$header-fontcolor2: rgba($header-fontcolor1, 0.8);
+$header-fontcolor3: rgba($header-fontcolor1, 0.7);
+
+//footer color
+$footer-background:darken($base-background,5%);
+$footer-color:lighten($footer-background, 40%);
+
+//border color 
+$border-color:#e9eff3;
+
+//Gradiet colors
+$gradient-success:#0097ac;
+$gradient-success2:#40f1c8;
+
+$gradient-danger: #a10256;
+$gradient-danger2: #f85a35;
+
+$gradient-warning: #ff7b03;
+$gradient-warning2: #ffd649;
+
+$gradient-info: #8de0ff;
+$gradient-info2: #94ffce;
+
+$gradient-primary:#5886ff;
+$gradient-primary2:#8de9ff;
+
+$gradient-secondary: $color-secondary;
+$gradient-secondary2: #a2c2ef;
+
+
+//width and heights
+$sidebar-width: 270px;
+$sidebar-small-width:100px;
+$footer-height : 50px;
+$header-height : 44px;
+$header-height-md : 44px;

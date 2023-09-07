@@ -1,0 +1,12 @@
+.fc-toolbar button { line-height: 40px; vertical-align: middle; padding: 0 13px; border-radius: 0 !important; border: 0; height: 40px; background: transparent; margin: 0; text-transform: uppercase; color: $color-primary; box-shadow: none; font-weight: 300; text-shadow: none; font-size: 12px;}
+.fc th,.fc td {  text-align: center; font-weight: 400;font-size: 13px;}
+.fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active { z-index: 4; background: $blue; color: $white;}
+.calendar .fc-toolbar h2{ color: $color-primary; font-size: 1.2em; line-height: 40px;   }
+.calendar.medium .fc-toolbar h2{font-size: 1em; color: $color-primary;}
+.calendar.small .fc-toolbar h2{ font-size: 0.8em; line-height: 40px; vertical-align: middle; display: block;}
+.calendar.small .fc-toolbar{ margin-bottom: 0;}
+.fc-toolbar .fc-center{ vertical-align: top;}
+.fc-day-grid-container.fc-scroller{ height: auto !important}
+@media screen and (max-width:640px){
+    .fc-toolbar button { line-height: 30px; padding: 0 5px; height: 30px; font-size: 11px;  border-radius: 0 !important    }
+}

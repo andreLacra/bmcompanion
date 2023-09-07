@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+
+	<!-- fontawesome icons CSS -->
+	<link rel="stylesheet" href="../static/assets/vendor/fontawesome4.7.0/css/font-awesome.min.css" type="text/css">
+
+	<!-- Custome scrollbar CSS -->
+	<link rel="stylesheet"
+		href="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css"
+		type="text/css">
+
+	<!-- framework CSS -->
+	<link id="theme" rel="stylesheet" href="../static/assets/css/style-helpdesk.css" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="../static/assets/css/style_check.css">
+
+	<title>BMC | Sign In</title>
+</head>
+
+<body class="fixed-header sticky-footer">
+	<div class="loader-logo">
+		<img src="../static/assets/img/logo.png" alt="bootstrap template design by maxartkiller">
+		<br>
+		<div class="loader-ellipsis">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<div class="background bg-dark">
+		<img src="../static/assets/img/bg-modern-wide.png" alt="" class="full-opacity">
+	</div>
+	<div class="wrapper">
+		<!-- header starts -->
+		<header class="border-bottom">
+			<!-- Fixed navbar -->
+			<nav class="navbar">
+				<div class="d-flex">
+					<a class="navbar-brand" href="/">
+						<img src="../static/assets/img/logo.png" alt="">
+						<h5 class=>
+							<span>Business Matching Companion</span>
+						</h5>
+					</a>
+				</div>
+			</nav>
+		</header>
+		<!-- header ends -->
+
+		{% if message is not none %}
+		<div class="alert alert-danger alert-dismissable fade show" role="alert">
+			{{ message }}
+			<button type="button" class="close" data-dismiss="alert">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		{% endif %}
+
+		<!-- main container starts -->
+		<div class="main-container">
+
+			<!-- Begin page content -->
+			<form action="/" method="post">
+				<div class="container">
+					<div class="card rounded-2 border-0 mb-3 z3 signin-block">
+						<div class="card-body">
+							<h1 class="display-4 text-center d-block text-dark">Sign in</h1>
+							<br>
+							<div class="form-group text-left float-label">
+								<input type="email" class="form-control" name="input-email" required>
+								<label>Email address</label>
+							</div>
+							<div class="form-group text-left float-label">
+								<input type="password" class="form-control" name="input-password" required>
+								<label>Password</label>
+							</div>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customCheck1">
+								<label class="custom-control-label" for="customCheck1">Remember Me</label>
+							</div>
+							<br>
+							<div>
+								<button class="btn btn-primary btn-block col" type="submit">Login</button>
+								<br>
+							</div>
+							<div class="text-left">
+								<a href="" class="">Forgot Password?</a>
+								<a href="/sign-up" class="float-right">Sign up Now!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- main container ends -->
+
+	</div>
+	<!-- wrapper ends -->
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../static/assets/vendor/jquery-3.2.1.min.js"></script>
+	<script src="../static/assets/vendor/popper.min.js"></script>
+	<script src="../static/assets/vendor/bootstrap-4.1.3/bootstrap.min.js"></script>
+
+	<!--Cookie js for theme chooser and applying it -->
+	<!-- <script src="../static/assets/vendor/cookie/jquery.cookie.js"></script> -->
+
+	<!-- Circular progress -->
+	<script
+		src="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.min.js"></script>
+
+
+	<!-- Other JavaScript -->
+	<script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>

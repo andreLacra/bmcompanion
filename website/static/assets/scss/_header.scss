@@ -1,0 +1,97 @@
+.nav.flex-column {
+    .nav-item {
+        a:not(button, .btn){ color: $color-primary; &:hover{background: rgba($blue, 0.1); border-left: 3px solid $blue;} }
+        &.active{ a, a:not(button, .btn){ background: $blue; color: $white }}
+    }
+}
+
+body{
+    .wrapper  > header, .wrapper  .header{ 
+	background: $header-background; padding: 0; position: relative; z-index: 12; color: $header-fontcolor1;
+	.navbar{
+		padding: 0;
+		.navbar-brand{
+			padding:0px 10px; vertical-align: middle; min-width: 160px; margin: -3px 0 0 0; line-height: $header-height;
+			img{
+				max-width: 30px; margin-right: 5px; margin-top: -2px; display: inline-block; vertical-align: middle;
+			}
+			h5{ 
+				line-height: 36px; display: inline-block; margin: 0; vertical-align: middle; font-size: 18px;
+				span{ line-height: 18px; display: block; color: $header-fontcolor1}
+				small{line-height: 18px;  display: block; color: $header-fontcolor2; font-size: 68%}
+			}
+		}		
+		.navbar-nav{
+			.nav-item{
+				.nav-link{
+					line-height: $header-height; padding: 0 20px; color: $header-fontcolor2; 
+				}
+				&:hover, &:focus{
+					.nav-link{ background-color: rgba($header-fontcolor2, 0.1);}
+				}
+				&.active{
+					.nav-link{ background-color: $blue; color: $white;}
+				}
+			}
+		}
+        .user-profile:after{ display: none}
+		.bg-success, .bg-warning,.bg-danger,.bg-primary, .bg-secondary, .bg-dark,.gradient-success,.gradient-warning,.gradient-danger,.gradient-primary,.gradient-info,.gradient-secondary,
+			&.bg-success, &.bg-warning,&.bg-danger,&.bg-primary, &.bg-secondary, &.bg-dark,&.gradient-success,&.gradient-warning,&.gradient-danger,&.gradient-primary,&.gradient-info,&.gradient-secondary{
+				.navbar-nav{
+					.nav-item{	
+						.nav-link{ 
+							color: rgba($white, 0.9);
+						}
+						&:hover, &:focus{
+							.nav-link{ 
+								background-color: rgba($white, 0.2);
+							}
+						}
+						&.active{
+							.nav-link{ background-color: rgba($white, 0.3); color: $white;}
+						}						
+					}
+				}
+				.user-profile .h5 span, .navbar-brand h5 span{ color: $white;}
+			}
+	}
+	
+	.menu-btn{
+		&:hover{ background: $blue; color:$white !important;}
+	}
+	.show{.menu-btn{ background: darken($header-background, 5%); color:$header-fontcolor1 !important;}}
+	
+	.user-profile{
+		height: $header-height; padding: 0 12px; line-height: $header-height - 8px; display: inline-block;
+		.h5{
+			line-height: 36px; display: inline-block; margin: 0; vertical-align: middle; font-size: 14px; text-align: left;
+			span{ line-height: 18px; display: block; color: $header-fontcolor1; width: 80px;  @extend .truncate;}
+			small{line-height: 18px; display: block; color:$header-fontcolor2; font-size: 80%;}
+		}
+		&:hover, &:focus{ text-decoration: none;}
+	}
+	.search-form {
+		position: relative; width: 27%; max-width: 300px;
+		.form-control{ border: 0; border-radius: 0; background:rgba($base-background, 0.5); height: $header-height; padding-right:  $header-height; margin: 0; width: 100%; color: $header-fontcolor1  }
+		.btn{ position: absolute; z-index: 1; right: 0px; display: none}
+	}
+	#sidebar-right.active .icon{ transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); }	
+}
+}
+.notifications{
+	.tab-pane{ max-height: 300px; overflow-y: auto; } 
+	.media figure + .media-body .time-title, .media .icon + .media-body .time-title{ max-width: 220px;}
+}
+
+.nav-scroller {
+	z-index: 11; position: relative; width: 100%; background: lighten($header-background, 5%);
+	.nav{
+		.nav-link{ line-height: 34px; font-size: 14px; color: $header-fontcolor2;
+			&.active{color: $header-fontcolor1; font-weight: 500; background: rgba($blue, 0.2);}
+			&:hover, &:focus{ background-color: $header-fontcolor2; color:$header-background }
+		}
+	}
+}
+
+
+

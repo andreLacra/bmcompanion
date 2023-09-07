@@ -1,0 +1,76 @@
+.chat { 
+	margin: 0; padding: 0; list-style: none;
+	li {
+	  	padding: 10px; position: relative;
+		.chat-img {
+			position: absolute; top: 10px;
+			img {  width: 100%;}
+		}
+		.chat-body { background-color: rgba($color-secondary, 0.2); .text-muted { color: $color-secondary!important;}}
+		p{ margin: 0;  display: block;clear: both; line-height: 22px;}
+		.header { margin-bottom: 10px; float: none}
+		&.left { 
+			.chat-body { margin-left: 60px;  padding: 15px; margin-bottom: 5px; position: relative;
+				&:before { content: ""; height: 4px; width: 4px; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid rgba($color-secondary, 0.2); position: absolute; left: -9px; top: 10px;
+				
+				}
+			}
+			.chat-img { left: 20px;}
+			.bg-success{ &:before{  border-right-color:$green !important;}}
+			.bg-warning{ &:before{  border-right-color:$yellow !important;}}
+			.bg-danger{ &:before{  border-right-color:$red !important;}}
+			.bg-primary{ &:before{  border-right-color:$blue !important;}}
+			.bg-secondary{ &:before{  border-right-color:$color-secondary !important;}}
+			.bg-dark{ &:before{  border-right-color:#03a9f4 !important;}}
+			.gradient-success{ &:before{  border-right-color:$green !important;}}
+			.gradient-warning{ &:before{  border-right-color:$yellow !important;}}
+			.gradient-danger{ &:before{  border-right-color:$red !important;}}
+			.gradient-primary{ &:before{  border-right-color:$blue !important;}}
+			.gradient-info{ &:before{  border-right-color:teal !important;}}
+			.gradient-secondary{ &:before{  border-right-color: $color-secondary !important;}}
+		}
+		&.right { 
+			.chat-body { 
+				padding: 15px; margin-bottom: 5px; position: relative; margin-right: 60px;
+				&:before {content: ""; height: 4px; width: 4px; border-top: 10px solid transparent; border-bottom: 10px solid transparent;border-left: 10px solid rgba($color-secondary, 0.2); position: absolute; right: -10px; top: 10px;}				
+			}
+			.chat-img {  right: 10px;}
+			.bg-success{ &:before{  border-left-color:$green !important;}}
+			.bg-warning{ &:before{  border-left-color:$yellow !important;}}
+			.bg-danger{ &:before{  border-left-color:$red !important;}}
+			.bg-primary{ &:before{  border-left-color:$blue !important;}}
+			.bg-secondary{ &:before{  border-left-color:$color-secondary !important;}}
+			.bg-dark{ &:before{  border-left-color:#03a9f4 !important;}}
+			.gradient-success{ &:before{  border-left-color:$green !important;}}
+			.gradient-warning{ &:before{  border-left-color:$yellow !important;}}
+			.gradient-danger{ &:before{  border-left-color:$red !important;}}
+			.gradient-primary{ &:before{  border-left-color:$blue !important;}}
+			.gradient-info{ &:before{  border-left-color:teal !important;}}
+			.gradient-secondary{ &:before{  border-left-color: $color-secondary !important;}}
+		}
+		
+	}
+}
+.bg-success, .bg-warning,.bg-danger,.bg-primary, .bg-secondary, .bg-dark,.gradient-success,.gradient-warning,.gradient-danger,.gradient-primary,.gradient-info,.gradient-secondary{ 
+	.chat-body.bg-light{ background: #ffffff !important}
+	.chat-body.bg-light * {
+		color: #000000 !important;
+		&.text-secondary{ color: $color-secondary !important}
+	}
+	.dropdown-menu{
+		.dropdown-item{ 
+			i{ color:$color-secondary !important; margin-right: 5px; }
+			&:active{ i{ color:#ffffff !important;} }
+		}
+	}
+}
+.chat-overlay{ 
+	opacity: 0; position: absolute; left: 0; top:15%; width: 100%; height: 100%; z-index: -1; padding: 68px 0; @include transition(ease,  all, 0.5s);
+	.card-body{ height: 100%;}
+	&.active{ opacity: 1; top: 0;z-index: 2}
+}
+
+
+.card-body.scroll-y{
+    overflow-y: auto
+}

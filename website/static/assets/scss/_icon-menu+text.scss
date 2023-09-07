@@ -1,0 +1,50 @@
+body .wrapper .sidebar .nav,  .nav{
+	/* icon menu */
+	&.icon-menu:not(.nav-tabs){
+		li {
+			a{
+				padding: 10px 5px; text-align: center; font-size: 12px;
+				.icon{
+					height: 30px; width: 30px; text-align: center; display: block; font-size: 18px; line-height: 28px; margin: 0 auto; clear: both;	 color: $sidebar-color1;
+				}
+				&:hover{ border: 0; padding: 10px 5px;}
+				.arrow{ margin: 0 auto; float: none}
+				&.active{ background-color: $sidebarmenu-active; color: $sidebarmenu-active-color}
+			}
+			ul{ 
+				li {
+					a{ 
+						background: rgba($color-secondary, 0.05);						
+					}
+				}
+			}
+			&.active{
+				a{ 
+					.icon{ color: #ffffff;}
+					color:rgba(255, 255, 255, 0.8) !important;
+					
+				}
+				&:hover, &:focus{
+					a{	color: #ffffff !important}
+				}
+			}
+			&:hover, &:focus{
+				a{	color: $sidebar-color1!important}
+			}
+		}
+	}
+	/* icon text menu */
+}
+body .wrapper .sidebar{
+	.bg-success, .bg-warning,.bg-danger,.bg-primary, .bg-secondary, .bg-dark,.gradient-success,.gradient-warning,.gradient-danger,.gradient-primary,.gradient-info,.gradient-secondary,
+	&.bg-success, &.bg-warning,&.bg-danger,&.bg-primary, &.bg-secondary, &.bg-dark,&.gradient-success,&.gradient-warning,&.gradient-danger,&.gradient-primary,&.gradient-info,&.gradient-secondary{
+			.icon-menu:not(.nav-tabs) li{
+				a {
+					color:$white;
+					&.active{ background-color: rgba($white, 0.3);}
+					&:hover{ background-color: rgba($white, 0.1); color:$white !important;}
+                    i:not(.bg-white, .bg-light, .figure ){color:$white !important;}
+				}		
+		}
+	}
+}

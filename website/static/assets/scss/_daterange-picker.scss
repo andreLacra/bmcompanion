@@ -1,0 +1,45 @@
+.datepicker-wrap{
+	min-width: 240px; background: #ffffff; margin-right: 10px; position: relative;
+	.datepicker-input{ height: 100%; width: 100%; display: block; border: 0; padding-left: 24px; &:focus{ outline:none;}  }
+	i{ position: absolute; left: 10px; top: 11px; font-size: 14px;	}
+}
+.daterangepicker {
+	width: auto; margin-top: 7px;
+	.ranges{ 
+		float: right; width:140px; padding: 10px; 
+		ul{
+			width: 100%; float: left; padding: 0; list-style: none;
+			li{
+				float: left; width: 100%; font-size: 14px; margin-bottom: 4px; padding:0px 10px; line-height: 30px; border-radius: 3px; background: $base-background; text-align: center; color: $color-primary;
+				&.active{ background: darken($blue, 15%); color: #ffffff;}
+			}
+		}
+	}
+	.calendar{ 
+		float: left; padding: 10px; width: auto;
+		.daterangepicker_input{ 
+			position: relative; margin-bottom: 5px; display: inline-block; width: 100%;
+			input{ width: 100%; float: left; font-size: 14px;}
+			i{ position: absolute; right: 10px; top: 10px; font-size: 14px;}
+		}
+		.calendar-table{
+			table{
+				width: 100%;
+				td, th{ font-size: 14px;}
+				td{ text-align: center; padding:0px 5px; height: 30px; &.off { color:#dddddd;}}
+				th{ text-align: center; padding:0px 5px; height: 30px; color: #000000; font-weight: 500; }
+				td.in-range{ background: lighten($blue, 20%); }
+				td.today{background: $green; color:#ffffff; border-radius: 3px; &.in-range{background: lighten($blue, 20%); border-radius: 0; color:$color-primary; }}
+				td.start-date{ background: $blue; border-radius: 3px 0 0 3px; color:#ffffff;}
+				td.end-date{ background: $blue;  border-radius:0 3px 3px 0; color:#ffffff;}
+				td.active{ background: darken($blue, 15%); }
+				td.end-date.off, td.start-date.off{ background: lighten($blue, 15%);; color:#dddddd; }
+				
+			}
+		}
+	}
+	&.opensleft{
+		&:before{ right: 10px; left: auto}
+		&:after{ right: 10px; left: auto}
+	}
+}

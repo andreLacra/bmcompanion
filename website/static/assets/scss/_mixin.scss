@@ -1,0 +1,28 @@
+/* transition */
+@mixin transition($transition, $property, $duration) {
+    -moz-transition:    $transition $property $duration;
+    -o-transition:      $transition $property $duration;
+    -webkit-transition: $transition $property $duration;
+    transition:         $transition $property $duration;
+}
+
+/* box-shadow */
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color !important;
+    -moz-box-shadow:inset $top $left $blur $color !important;
+    box-shadow:inset $top $left $blur $color !important;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color !important;
+    -moz-box-shadow: $top $left $blur $color !important;
+    box-shadow: $top $left $blur $color !important;
+  }
+}
+
+/* Gradient generate */
+@mixin gradient($deg, $from, $to) {/* fallback/image non-cover color */
+  background-image: -moz-linear-gradient($deg, $from, $to);
+  background-image: -webkit-gradient($deg, linear, 0% 0%, 0% 100%, from($from), to($to));
+  background-image: -webkit-linear-gradient($deg, $from, $to);
+  background-image: -o-linear-gradient($deg, $from, $to);
+}

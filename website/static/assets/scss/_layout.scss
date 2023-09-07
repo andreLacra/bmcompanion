@@ -1,0 +1,171 @@
+/* layout css starts */
+html {position: relative; height: 100%; }
+body{
+	height: auto; min-height: 100%; position: relative;
+	.footer{ background: $footer-background; color: $footer-color; @include transition(ease, all, 0.5s); a{color:$white};  width: 100%; line-height: $footer-height/2 ; padding: 10px 0; z-index: 5 } 
+	.wrapper{
+		min-height:400px; width: 100%; @include transition(ease, all, 0.5s);
+         &> header, .header{ width: 100%; display: block; }
+		.main-container{ margin: 0 auto; margin-left: 0; margin-right: 0; display: block; @include transition(ease, all, 0.5s); }
+		.sidebar{
+			width: $sidebar-width; position: fixed;  height: 100%; top: 0; z-index: 10; @include transition(ease, all, 0.5s); overflow-y: auto; padding-top:  $header-height; 
+			&.left{ margin-left: - ($sidebar-width + 10px); left: 0}
+			&.right{ margin-right: - ($sidebar-width + 10px); right: 0}
+			
+			/* sidebar small */
+			&.sidebar-small{ 
+				width:  $sidebar-small-width;
+				&.left{ width: $sidebar-small-width; margin-left: - $sidebar-small-width - 10px; left: 0}
+				&.right{ width:$sidebar-small-width; margin-right: - $sidebar-small-width - 10px; right: 0}
+			}
+		}		
+	}
+	
+	&.menuleft-open{
+		.wrapper{
+			.main-container{ margin-left: $sidebar-width}
+			.sidebar{
+				&.left{ margin-left: 0 }
+			}
+		}
+		.footer{ padding-left: $sidebar-width !important;}
+		
+		&.menu-left-small{
+			.wrapper{
+				.main-container{ margin-left: $sidebar-small-width}
+				.sidebar{
+					&.left{ margin-left: 0 }
+				}
+			}
+			.footer{ padding-left: $sidebar-small-width !important;}
+		}
+	}
+	&.menuright-open{
+		.wrapper{
+			.main-container{ margin-right: $sidebar-width;}
+			.sidebar{
+				&.right{ margin-right: 0}
+			}
+		}
+		.footer{ padding-right: $sidebar-width !important;}
+	}
+	
+	
+	
+	
+}
+body .wrapper  .main-container .sidebar{ display: inline-block;  float: left; margin-right: 15px; padding: 0;}
+/* ============= Fixed header styles =========== */
+body{	
+	&.fixed-header{
+		.wrapper{
+			padding-top: $header-height;
+			&> header, .header{
+				position: fixed; display: block; top: 0; left: 0; 
+			}	
+			.nav-scroller{position: fixed; }
+		}	
+		
+	}
+	
+}
+
+/* ============= Sticky footer styles =========== */
+body{	
+	&.sticky-footer{		
+		.wrapper{ 
+			 position: relative;
+			& >.header, .header{ width: 100%; float: left}
+			
+		}		
+		.footer { position: absolute; bottom: 0;}
+	}
+	
+}
+/* ============= Sticky Sidebar styles =========== */
+body{	
+	&.sticky-sidebar{
+		
+		.wrapper{ 
+			.sidebar.left{left: 0; margin-left: 0;}
+			.main-container{margin-left: $sidebar-width; }
+		}		
+		.footer { padding-left: $sidebar-width !important; }
+		&.menu-left-small{
+			.wrapper{
+				.main-container{ margin-left: $sidebar-small-width}
+				.sidebar{
+					&.left{ margin-left: 0 }
+				}
+			}
+			.footer{ padding-left: $sidebar-small-width !important;}
+		}
+	}
+	
+}
+	
+
+/* ============= boxed page styles =========== */
+body{
+	&.boxed-page{
+		padding-top:15px; background-color:  darken($base-background, 5%);
+		.wrapper{ 
+			max-width: 1440px; margin: 0 auto; overflow: hidden; width: 96%; background-color: rgba(255, 255, 255, 0.15); position: relative; padding-top: 0 !important;
+			.sidebar{ position: absolute;}	
+			.nav-scroller{ top: 0 !important}
+		}
+		&.menuright-open{
+			.wrapper .main-container {   margin-right: 0px;}
+			.footer{ padding-right: 0 !important}
+		}
+		&.menuleft-open{
+			.footer{ padding-left: 0 !important}
+		}
+
+		.navbar-collapse{ top: 0 !important;  z-index: 10}
+	}
+}
+
+
+@media screen and (max-width:1600px){
+	body{		
+		&.menuright-open{.wrapper{ .main-container{margin-right: 0}}}
+	}
+}
+@media screen and (max-width:1280px){
+	body{
+		&.menuleft-open, &.menuright-open{
+			.wrapper{ 
+				.main-container{margin: 0 auto}				
+			}
+			.footer{ padding-left: 0 !important; padding-right: 0 !important;}
+		}
+	}
+	
+	/* ============= Sticky Sidebar styles =========== */
+	body,body.menuleft-open{	
+		&.sticky-sidebar{
+			left: 0;
+			.wrapper{ 
+				.main-container{margin-left: $sidebar-width; }
+			}		
+			.footer { padding-left: $sidebar-width !important; }
+			&.menu-left-small{
+				.wrapper{
+					.main-container{ margin-left: $sidebar-small-width}
+					.sidebar{
+						&.left{ margin-left: 0 }
+					}
+				}
+				.footer{ padding-left: $sidebar-small-width !important;}
+			}
+		}
+
+	}
+	
+}
+
+
+@media screen and (max-width:767px){
+	footer, footer .text-right{ text-align: center !important}
+}

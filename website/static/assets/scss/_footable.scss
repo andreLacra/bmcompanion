@@ -1,0 +1,133 @@
+.fooicon {
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fooicon:before,
+.fooicon:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.fooicon-loader:before {
+	content: "\f110";
+}
+.fooicon-plus:before {
+	content: "\f107";
+}
+.fooicon-minus:before {
+	content: "\f106";
+}
+.fooicon-search:before {
+	content: "\f002";
+}
+.fooicon-remove:before {
+	content: "\f410";
+}
+.fooicon-sort:before {
+	content: "\f0dc";
+}
+.fooicon-sort-asc:before {
+	content: "\f0dd";
+}
+.fooicon-sort-desc:before {
+	content: "\f0de";
+}
+.fooicon-pencil:before {
+	content: "\f303";
+}
+.fooicon-trash:before {
+	content: "\f2ed";
+}
+.fooicon-eye-close:before {
+	content: "\f06e";
+}
+.fooicon-flash:before {
+	content: "\f0e7";
+}
+.fooicon-cog:before {
+	content: "\f013";
+}
+.fooicon-stats:before {
+	content: "\f080";
+}
+.footable{
+	tbody{	
+		tr{
+			td{
+				span.footable-toggle{ opacity: 1; font-size: 20px;}
+			}
+		}
+        .footable-first-visible {
+            padding-left: 20px; position: relative;
+            span.footable-toggle{ position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 1; vertical-align: middle;}
+            .fooicon-plus:before{ content: '+'} 
+            .fooicon-minus:before{content: '-'}
+            .fooicon-plus:before, 
+            .fooicon-minus:before{margin-top: 6px; margin-left: 6px; display: inline-block;}
+        }
+		.footable-detail-row{  
+			background: lighten($base-background, 2%); 
+            &> td{
+                padding: 0; 
+                table tr td {border-top: 5px solid transparent} 
+            }
+			table.footable-details{
+				background: none;
+				th{ color: $color-primary; font-weight: normal; border: 0; border-top:1px solid rgba($color-secondary, 0.1) }
+				&>tbody>tr>th:nth-child(1) {min-width: 40px;  width: 150px;}
+			}
+		}
+	}
+	tfoot{
+		tr.footable-paging{
+			td{
+				.pagination {
+					display: flex; margin-top: 0 !important; @include list-unstyled();  @include border-radius(); text-align: center;-webkit-box-pack: center!important;  -ms-flex-pack: center!important; justify-content: center!important;
+					.footable-page-link{ 
+						position: relative; display: block; padding: $pagination-padding-y $pagination-padding-x; margin-left: -$pagination-border-width; line-height: $pagination-line-height; color: $pagination-color;
+						background-color: $pagination-bg;  border: $pagination-border-width solid $pagination-border-color; 
+						&:hover { color: $pagination-hover-color;	text-decoration: none;	background-color: $pagination-hover-bg;	border-color: $pagination-hover-border-color; }
+						&:focus { z-index: 2; outline: 0;	box-shadow: $pagination-focus-box-shadow; }
+						// Opinionated: add "hand" cursor to non-disabled .page-link elements
+						&:not(:disabled):not(.disabled) {cursor: pointer;}
+					}
+					li {
+						display: inline-block;
+					  &:first-child {
+						.footable-page-link{
+						  margin-left: 0;
+						  @include border-left-radius($border-radius);
+						}
+					  }
+					  &:last-child {
+						.footable-page-link{
+						  @include border-right-radius($border-radius);
+						}
+					  }
+
+					  &.active .footable-page-link {
+						z-index: 1;
+						color: $pagination-active-color;
+						background-color: $pagination-active-bg;
+						border-color: $pagination-active-border-color;
+					  }
+
+					  &.disabled .footable-page-link {
+						color: $pagination-disabled-color;
+						pointer-events: none;
+						// Opinionated: remove the "hand" cursor set previously for .page-link
+						cursor: auto;
+						background-color: $pagination-disabled-bg;
+						border-color: $pagination-disabled-border-color;
+					  }
+					}
+				}
+				span.label { display: none !important}
+			}
+		}
+	}
+}

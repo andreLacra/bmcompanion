@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- fontawesome icons CSS -->
+    <link rel="stylesheet" href="../static/assets/vendor/fontawesome4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <!-- Custome scrollbar CSS -->
+    <link rel="stylesheet"
+        href="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css"
+        type="text/css">
+
+    <!-- framework CSS -->
+    <link id="theme" rel="stylesheet" href="../static/assets/css/style-helpdesk.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <!-- Calendar -->
+    <link rel="stylesheet" href="../static/assets/css/style_calendar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../static/assets/css/style_check.css">
+
+    <link rel="icon" href="../static/assets/img/logo.png">
+
+    <title>BMC | Set Meeting</title>
+</head>
+
+<body class="sticky-footer">
+    <div class="loader-logo">
+        <img src="../static/assets/img/logo.png" alt="bootstrap template design by maxartkiller">
+        <br>
+        <div class="loader-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="wrapper" style="margin-bottom: 70px !important;">
+        <!-- header starts -->
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar">
+                <div class="d-flex">
+                    <a class="navbar-brand" href="/">
+                        <img src="../static/assets/img/logo.png" alt="">
+                        <h5>
+                            <span>Business Matching Companion</span>
+                        </h5>
+                    </a>
+                </div>
+                <div class="d-flex ml-auto" id="navbarCollapse">
+
+                    <div class="d-block">
+
+                        <div class="dropdown float-left">
+                            <button class="btn btn-link rounded-0 dropdown-toggle float-right user-profile"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+                                <span class="figure avatar30 rounded-circle m-0">
+                                    <img src="../static/assets/img/userLogo.png" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="/signout">Signout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- header ends -->
+
+        <!-- main container starts -->
+        <div class="main-container">
+            <div class="container-fluid mb-3 position-relative bg-purple">
+                <div class="row">
+                    <div class="container">
+                        <div class="row page-title-row">
+                            <div class="col-8">
+                                <h2 class="page-title text-white">Set Meeting with {{ company.business_name }}</h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="#" class="btn-sm btn btn-success mt-1">
+                                    <i class="fa fa-star"></i>
+                                </a>
+                                <button type="button" class="btn-sm btn btn-primary ml-2 mt-1" id="color-setting">
+                                    <i class="fa fa-cogs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin page content -->
+            <div class="container" style="margin-top: 30px; padding: 10px;">
+                {% if displayMeeting is not false %}
+                {% if dateMessage is not none %}
+                <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                    {{ dateMessage }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+                <div class="col-12">
+                    <div class="card rounded-0 border-0 mb-3">
+                        <!-- <div class="card-header">
+                            <h2 class="sub-title text-dark">
+                                <i class="mr-2 fa fa-meetup"></i>Set Meeting
+                            </h2>
+                        </div> -->
+                        <div class="card-body">
+
+                            <form action="/meeting_request/{{ company.id }}" enctype="multipart/form-data"
+                                method="post">
+                                <div class="d-flex justify-content-left mb-7"
+                                    style="margin-bottom: 15px; margin-top: 40px;">
+                                    <h5>Meeting Title:</h5>
+                                </div>
+                                <div>
+                                    <div class="form-group row justify-content-center" style="margin-top: 10px;">
+                                        <input type="text" class="form-control" rows="3" placeholder="Title"
+                                            id="business-title" name="meeting-title"
+                                            style="width: 65% !important; font-size: 35px; padding: 25px !important; text-align: center; margin-bottom: 25px !important;"
+                                            required></input>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-left" style="margin-bottom: 15px;">
+                                    <h5>Meeting Duration:</h5>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="btn-group" role="group" style="margin-bottom: 25px !important;">
+                                        <div class="row-md mr-4">
+                                            <div class="col"><input type="radio" class="btn-check" name="btnradio"
+                                                    id="15 Minutes" value="15 Minutes" required>
+                                                <label class="btn btn-outline-primary" for="15 Minutes">15
+                                                    Minutes</label>
+                                            </div>
+                                            <div class="col"><input type="radio" class="btn-check" name="btnradio"
+                                                    id="30 Minutes" value="30 Minutes" required>
+                                                <label class="btn btn-outline-primary" for="30 Minutes">30
+                                                    Minutes</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row-md">
+                                            <div class="col"> <input type="radio" class="btn-check" name="btnradio"
+                                                    id="45 Minutes" value="45 Minutes" required>
+                                                <label class="btn btn-outline-primary" for="45 Minutes">45
+                                                    Minutes</label>
+                                            </div>
+                                            <div class="col">
+                                                <input type="radio" class="btn-check" name="btnradio" id="60 Minutes"
+                                                    value="60 Minutes" required>
+                                                <label class="btn btn-outline-primary" for="60 Minutes">60
+                                                    Minutes</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex justify-content-left" style="margin-bottom: 15px;">
+                                    <h5>Meeting Time:</h5>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="form-group row">
+                                        <div class="input-group" id="timePicker" style="margin-top: 40px;">
+                                            <div class="cs-form">
+                                                <input type="time" class="form-control" name="meeting_time"
+                                                    value="12:00 AM" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex justify-content-left" style="margin-bottom: 15px; margin-top: 40px;">
+                                    <h5>Date:</h5>
+                                </div>
+                                <div class="content">
+
+                                    <div class="container text-left">
+
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-10 text-center">
+                                                <input type="text" class="form-control w-40 mx-auto mb-3" id="result"
+                                                    placeholder="Select date" name="meetingDate" readonly
+                                                    style="width: 60%;" required>
+                                                <div action="#" class="row">
+                                                    <div class="col-md-12">
+                                                        <div id="inline_cal"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-left mb-7"
+                                    style="margin-bottom: 15px; margin-top: 40px;">
+                                    <h5>Meeting Link:</h5>
+                                </div>
+                                <div>
+                                    <p class="text-secondary">* If meeting were
+                                        sent with code. Please specify details in
+                                        details input.</p>
+                                    <div class="form-group row justify-content-center" style="margin-top: 10px;">
+                                        <select id="dropdown float-left" name="meetingMode" style="width: 65%; font-size: 15px; padding: 5px; margin-bottom: 15px;
+                                        border: none;" required>
+                                            <option value="" disabled selected>
+                                                Select Mode
+                                            </option>
+                                            <option value="Online">
+                                                Online
+                                            </option>
+                                            <option value="Onsite">
+                                                Onsite
+                                            </option>
+                                        </select>
+                                        <input type="text" class="form-control" rows="3"
+                                            placeholder="Meeting Link/Code/Address" id="meeting-link"
+                                            name="meeting-link"
+                                            style="width: 65% !important; padding: 25px !important; margin-bottom: 25px !important;"
+                                            required></input>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-left mb-7"
+                                    style="margin-bottom: 15px; margin-top: 40px;">
+                                    <h5>Meeting Details:</h5>
+                                </div>
+                                <div>
+                                    <div class="form-group row justify-content-center" style="margin-top: 30px;">
+                                        <textarea class="form-control" rows="3"
+                                            placeholder="What this meeting will cover" id="business-description"
+                                            name="meeting-details" style="width: 65% !important;" required></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Submit and Cancel -->
+                                <div class="d-flex justify-content-end" style="margin-top: 30px;">
+                                    <div class="row">
+                                        <div class="col"><a href="/profile/{{ currentBusinessID.id }}"><button
+                                                    type="button" class="btn btn-danger">Close</button></a>
+                                        </div>
+                                        <div class="col"><button class="btn btn-primary btn-block col"
+                                                type="submit">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Submit and Cancel -->
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <h1 class="text-dark">Error. It seems like you can't set a meeting with this company :( </h1>
+                {% endif %}
+
+            </div>
+        </div>
+        <!-- main container ends -->
+
+    </div>
+    <!-- wrapper ends -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/assets/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../static/assets/vendor/popper.min.js"></script>
+    <script src="../static/assets/vendor/bootstrap-4.1.3/bootstrap.min.js"></script>
+
+    <!-- Calendar -->
+    <script src="../static/assets/js/rome.js"></script>
+    <script src="../static/assets/js/calendarPopper.js"></script>
+    <script src="../static/assets/js/calendarMain.js"></script>
+
+    <!-- scrollbars -->
+    <script
+        src="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.min.js">
+        </script>
+
+    <!-- Other JavaScript -->
+    <script src="../static/assets/js/main.js"></script>
+
+    <script>
+        var today = new Date();
+        var minDate = today.setDate(today.getDate() + 1);
+
+        $('#datePicker').datetimepicker({
+            useCurrent: false,
+            format: "MM/DD/YYYY",
+            minDate: minDate
+        });
+
+        var firstOpen = true;
+        var time;
+
+
+    </script>
+
+
+</body>
+
+</html>

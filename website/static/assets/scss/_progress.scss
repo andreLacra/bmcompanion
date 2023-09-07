@@ -1,0 +1,7 @@
+.progress{ background-color: darken($base-background, 10%)}
+.progress-bar{ position: relative; span{ width: 16px; height: 16px; background: #ffffff; display: block; position: absolute; top: 0; right: -8px;} }
+.progress-xs{ height: 2px; span{ width: 3px; height: 3px; right: -1px;}}
+.progress-sm{ height: 4px; span{ width: 4px; height: 4px; right: -2px;}}
+.progress-md{ height: 10px; span{ width: 10px; height: 10px; right: -5px;}}
+.progress-lg{ height: 20px; span{ width: 20px; height: 20px; right: -10px;}}
+.progress-xl{ height: 24px; span{ width: 24px; height: 24px; right: -12px;}}

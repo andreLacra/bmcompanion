@@ -1,0 +1,63 @@
+.theme-color{
+	width: 100%; display: block; text-align: center;
+	.custom-control{ 
+		padding:2px; width: 12.5%; float: left;
+		.custom-control-label{ 
+			width: 100%; height:24px; border-radius: 4px; float: left;
+			&:before{background-color: transparent; left: 3px; top: 3px; height: 16px; width:17px; border-radius:3px;}
+			&:after{left: 3px; top: 5px;height: 16px; width: 16px; text-align: center; vertical-align: middle; line-height: 14px; content: '\f00c'; font: normal normal normal 10px/1 FontAwesome; background: none; visibility: hidden; background-image: none !important; color: #ffffff; font-size:10px;}
+		} 
+		
+	}
+	.custom-control-input:checked ~ .custom-control-label{ border: 1px solid #000000 !important;
+		&:after{ visibility: visible}
+	}
+}
+.dark-blue{ background-color: #252d47; }
+.dark-purple{background-color: #3d274a;}
+.dark-maroon{background-color: #521e2e;}
+.dark-grey{background-color: #252525;}
+.dark-pink{background-color: #841845;}
+.dark-brown{background-color: #462a1a;}
+.dark-green{background-color: #023c29;}
+.red{background-color: #f44336;}
+.pink{background-color: #e91e63;}
+.purple{background-color: #673ab7;}
+.blue{background-color: #2587e8;}
+.teal{background-color: #00bcd4;}
+.skyblue{background-color: #0faff7;}
+.parrotgreen{background-color: #8bc34a;}
+.green{background-color: #009688;}
+.amber{background-color: #ffc107;}
+.orange{background-color: #ff9800;}
+.brown{background-color: #795548;}
+.grey{background-color: #607d8b;}
+
+
+.sidebar-image{
+	width: 100%; display: block; text-align: center;
+	.custom-control{ 
+		padding: 2px; width: 33.30%; float: left;
+		.custom-control-label{ 
+			width: 100%; height: 100px; border-radius: 4px; overflow: hidden; background-color: #ffffff;
+			img{ width: 100%;}
+			&:before{background-color: transparent; left: 5px; top: 5px; height: 20px; width: 20px; border-radius: 3px;}
+			&:after{left:5px; top: 8px;height: 20px; width: 20px; text-align: center; vertical-align: middle; line-height: 20px; content: '\f00c'; font: normal normal normal 12px/1 FontAwesome; background: none; visibility: hidden; background-image: none !important; color: #ffffff;  font-size:12px;}
+		} 
+		.custom-control-input.bg-repeat{
+			&+.custom-control-label{ height: 70px;}
+		}
+		
+	}
+	.custom-control-input:checked ~ .custom-control-label{ border: 1px solid #000000 !important;&:before{background-color: $green;} &:after{ visibility: visible}}
+}
+
+.on-page-theming{
+	.theme-color{ .custom-control{ padding: 2px; width: 10%;} }
+	.sidebar-image{
+		.custom-control{ width:33.3%; height: auto; .custom-control-label{ height: 150px;}}
+		.custom-control-input.bg-repeat{
+			&+.custom-control-label{ height: 70px;}
+		}
+	}
+}

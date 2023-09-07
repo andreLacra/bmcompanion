@@ -1,0 +1,44 @@
+.noUi-target {
+    background: #e9ecef; border-radius: 4px; border: none; box-shadow: none;
+	
+	.noUi-handle {
+		border: none; border-radius: 15px; background: #FFF; cursor: default; box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.2);
+		&:before, &:after{ display: none; }
+	}
+	&.noUi-horizontal {
+		.noUi-handle {	width: 28px;height: 28px;}
+	}
+	&.success{
+		.noUi-connect{ background-color: $green}
+	}
+	&.danger{
+		.noUi-connect{ background-color: $red}
+	}
+	&.warning{
+		.noUi-connect{ background-color: $yellow}
+	}
+	&.primary{
+		.noUi-connect{ background-color: $blue}
+	}
+	&.info{
+		.noUi-connect{ background-color: $teal}
+	}
+	&.dark{
+		.noUi-connect{ background-color: $color-primary}
+	}
+	
+	&.noUi-horizontal {
+		&.noUi-xs{ height: 2px;  .noUi-handle{ height:6px; width:6px; top:-2px; right:-2px;} }
+		&.noUi-sm{ height: 4px;  .noUi-handle{ height:10px; width:10px; top:-3px; right:-3px;} }
+		&.noUi-md{ height: 10px; .noUi-handle{ height:18px; width:18px; top:-4px; right:-4px;} }
+		&.noUi-lg{ height: 20px; .noUi-handle{ height:28px; width:28px; top:-4px; right:-4px;} }
+		&.noUi-xl{ height: 24px; .noUi-handle{ height:32px; width:32px; top:-4px; right:-4px;} }
+	}
+	&.striped{
+		.noUi-connect {
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+			background-size: 1rem 1rem;
+			background-repeat: repeat;
+		}
+	}
+}

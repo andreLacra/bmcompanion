@@ -1,0 +1,17 @@
+body .wrapper .sidebar .nav:not(.nav-tabs) li a:hover,.nav.flex-column .nav-item a:not(button):not(.btn):hover ,
+.dropdown-menu .dropdown-item:hover, .userlist .item:hover{ background-color: rgba($green, 0.1); border-color: $green}
+.nav.flex-column .nav-item.active a, .nav.flex-column .nav-item.active a:not(button):not(.btn), 
+.dropdown-menu .dropdown-item:active, .userlist .item:active, .userlist .item.selected, body .wrapper .sidebar .nav:not(.nav-tabs) li a.active{ background-color:$green;  border-color: $green; color: $white}
+.mCSB_scrollTools .mCSB_draggerRail{background: rgba($green,0.3);}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { background: rgba($green,0.5);}
+.mCSB_scrollTools.mCSB_scrollTools_onDrag .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar { background: rgba($green,0.8); width: 4px;}
+body .wrapper>header .menu-btn:hover, body .wrapper .header .menu-btn:hover {  background: $green;  color: #fff !important;}
+.btn-secondary { background: #d4f7c2; border-color: #d5f7c3; color: #20263e; &:active, &:focus{ background-color: darken($green, 2%); color: $white}}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show>.btn-secondary.dropdown-toggle{ background-color: darken($green, 10%); outline: none; border: 0; box-shadow: none}
+.ticketheader{ position: absolute !important; float:none; z-index: 1 !important; left: 0; top: 0;}
+.table tbody tr:hover td{background-color: rgba($green, 0.1); }
+.table tbody tr:hover td:first-child:before { content: ""; background: $green; width: 3px;  height: 100%; left: 0;top: 0; position: absolute; display: block;}
+body .wrapper .sidebar .nav:not(.nav-tabs) li.show {background: rgba(213, 247, 195, 0.1);border-top: 1px solid rgb(213, 247, 195); border-bottom: 1px solid rgb(213, 247, 195);}
+body .wrapper .sidebar .nav:not(.nav-tabs) li.show .menudropdown { background: rgba(213, 247, 195, 0.44); border-bottom: 1px solid rgb(213, 247, 195);}
+#homecarousel .carousel-inner .carousel-item{ height: 480px;}
+ul li{ line-height: 24px}

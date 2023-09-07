@@ -1,0 +1,37 @@
+.media{
+	color: $color-secondary; line-height: 18px; font-size: 14px; white-space: normal; text-decoration: none; 
+	.media-body{font-size: 14px;}
+	h4{ line-height: 20px; font-size: 18px; font-weight: 400;  color: $color-primary;}	
+	h5{ line-height: 16px; font-size: 15px; font-weight: 500; margin-bottom: 4px;  color: $color-primary;} 
+	h5+P{ font-size: 13px; color:rgba($color-primary, 0.75); line-height: 18px;} 
+	.time-title{ padding-right: 70px;  position: relative; small{ position: absolute; right: 0; top: 0px;  } } 
+	figure + .media-body .time-title, .icon + .media-body .time-title{ max-width: 98%;	}
+	figure{ margin-right: 10px;}
+	.avatar60+.media-body{ h4, h5{ margin-top: 10px;}}
+	.icon{ width: 25px; margin-right: 15px; font-size:24px; min-width: 25px; padding-top: 5px; }	
+	.icon.two-x{ font-size: 30px; width: 32px} 
+	.icon.three-x{ font-size: 45px; width: 50px;} 
+	.icon.four-x{ font-size: 60px; width: 65px;} 
+	.icon.rounded-circle{ height: 65px; width: 65px; text-align: center; line-height: 60px; vertical-align: middle; font-size: 30px;}
+	.music-img{ width: 80px; height: 80px;}
+	&:hover{ text-decoration: none}
+	&.media-sm{
+		line-height: 14px; font-size: 12px; 
+		.media-body{ font-size: 12px;}
+		h4{ line-height: 18px; font-size: 14px;}	
+		h5{ line-height: 13px; font-size: 12px;} 
+		h5+P{ font-size: 9px;line-height: 14px;} 
+		figure{ margin-right: 5px;}
+		.icon{ width: 18px; margin-right: 5px; font-size:16px; min-width: 20px; padding-top: 6px;}		
+	}
+}
+.sidebar{
+    .media{
+        h5+P{ font-size: 13px; color:rgba($sidebar-color1, 0.75); line-height: 18px;} 
+    }
+}
+.card.bg-white{
+     .media{
+         h5+P{ color:$dark; opacity: 0.8;} 
+    }
+}

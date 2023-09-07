@@ -1,0 +1,60 @@
+body{
+	.wrapper{
+		.sidebar{
+			background-color: $sidebar-background;background-size: 100%; background-position: bottom; background-repeat: no-repeat; color:$sidebar-color1;
+			.nav:not(.nav-tabs){
+				width: 100%; display: inline-block; 
+				li{
+					font-size: 15px; width: 100%; float: left; 
+					a{
+						font-size: 15px; padding: 10px 15px;line-height: 20px; color: $sidebar-color1; display: block; width: 100%; text-decoration: none;
+						&:hover{ background: rgba($blue, 0.1); border-left: 3px solid $blue; padding-left: 12px;}
+						&.active{ background-color:$sidebarmenu-active; color: $sidebarmenu-active-color; text-decoration: none; }
+						i.icon{ display: inline-block; margin-right: 10px; width: 20px; font-size: 14px;}
+						i.arrow{ float: right}
+					}
+					ul{
+						display: none;
+						li{
+							a{
+								color: $sidebar-color2; padding-left: 48px;
+								&:hover{padding-left: 45px;}
+							}
+						}
+					}
+					&.show {
+						background: rgba($blue, 0.03);border-top: 1px solid rgba($blue, 0.2);border-bottom: 1px solid rgba($blue, 0.2);
+						.menudropdown{
+							background: rgba($blue, 0.08);  border-bottom: 1px solid rgba($blue, 0.2);
+							i.arrow { transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg);  }} 
+					}
+				}
+				.title-nav{ text-transform: uppercase; font-size: 15px; padding: 10px 15px;line-height: 20px; color: $sidebar-color1; font-weight: 500}								
+			}
+			.capstitle{ font-weight: 500; font-size: 14px; padding: 10px 15px; display: inline-block; width: 100%;  }
+			.dropdown-menu-center{ width: 200px; margin-left: -85px;}		
+			.progress_profile {position: absolute; margin: 26px auto; display: inline-block; width: 100%;  z-index: 1; text-align: center;}
+            .media{ color: $sidebar-color2; h4, h5{ color: $sidebar-color1;}  }
+            .userlist .item:active{ .media{ color: $white; h4, h5{ color: $white;}  }}
+			.text-secondary{ color: $sidebar-color3 !important }
+			.nav-tabs .nav-item .nav-link{ color: $sidebar-color1;}
+            
+			.bg-success, .bg-warning,.bg-danger,.bg-primary, .bg-secondary, .bg-dark,.gradient-success,.gradient-warning,.gradient-danger,.gradient-primary,.gradient-info,.gradient-secondary,
+			&.bg-success, &.bg-warning,&.bg-danger,&.bg-primary, &.bg-secondary, &.bg-dark,&.gradient-success,&.gradient-warning,&.gradient-danger,&.gradient-primary,&.gradient-info,&.gradient-secondary{
+				.nav:not(.nav-tabs) li{
+					color:$white;
+					a {
+						color:$white;
+						&.active{ background-color: rgba($white, 0.3);}
+						&:hover{ background: rgba($white, 0.1); border-left: 3px solid $white;}
+					}
+					
+				}
+                .media{ color: $white; h5{ color:$white;} }
+			}
+			
+			
+		}
+	}
+}
+

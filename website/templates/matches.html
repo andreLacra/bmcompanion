@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+    <!-- fontawesome icons CSS -->
+    <link rel="stylesheet" href="../static/assets/vendor/fontawesome4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <!-- Custome scrollbar CSS -->
+    <link rel="stylesheet"
+        href="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css"
+        type="text/css">
+
+    <!-- framework CSS -->
+    <link id="theme" rel="stylesheet" href="../static/assets/css/style-helpdesk.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/assets/css/style_check.css">
+
+    <!-- Style for bottom navbar -->
+    <link rel="stylesheet" href="../static/assets/css/style_navbottom.css">
+
+    <link rel="icon" href="../static/assets/img/logo.png">
+
+    <title>BMC | {{ currentBusiness.business_name }}</title>
+</head>
+
+<body class="sticky-footer">
+    <div class="loader-logo">
+        <img src="../static/assets/img/logo.png" alt="bootstrap template design by maxartkiller">
+        <br>
+        <div class="loader-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="wrapper" style="margin-bottom: 70px !important;">
+        <!-- Bottom Nav -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <nav class="navBottom">
+            <a href="/dashboard" class="nav__link">
+                <i class="material-icons nav__icon">dashboard</i>
+                <span class="nav__text">Home</span>
+            </a>
+            <a href="/profile/{{ currentBusiness.id }}" class="nav__link">
+                <i class="material-icons nav__icon">person</i>
+                <span class="nav__text">Profile</span>
+            </a>
+            <a href="/matches/{{ currentBusiness.id }}" class="nav__link nav__link--active">
+                <i class="material-icons nav__icon">handshake</i>
+                <span class="nav__text">Matches</span>
+            </a>
+            <a href="#" class="nav__link">
+                <i class="material-icons nav__icon">tag</i>
+                <span class="nav__text">RFQ</span>
+            </a>
+            <a href="#" class="nav__link">
+                <i class="material-icons nav__icon">settings</i>
+                <span class="nav__text">Settings</span>
+            </a>
+        </nav>
+        <!-- Bottom Nav -->
+
+        <!-- header starts -->
+        <header class="border-bottom">
+            <!-- Fixed navbar -->
+            <nav class="navbar fixed-top navbar-white bg-white">
+                <div class="d-flex">
+                    <a class="navbar-brand" href="/">
+                        <img src="../static/assets/img/logo.png" alt="">
+                        <h5>
+                            <span>Business Matching Companion</span>
+                        </h5>
+                    </a>
+                </div>
+                <div class="d-flex ml-auto" id="navbarCollapse">
+
+                    <div class="d-block">
+
+                        <div class="dropdown float-left">
+                            <button class="btn btn-link rounded-0 dropdown-toggle float-right user-profile"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+                                <span class="figure avatar30 rounded-circle m-0">
+                                    <img src="../static/assets/img/userLogo.png" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="/signout">Signout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- header ends -->
+
+        {% if showMatches is not false %}
+        <!-- main container starts -->
+        <div class="main-container" style="margin-bottom: 80px !important; margin-top: 40px !important;">
+            <div class="container-fluid bg-secondary mb-3 position-relative bg-dark">
+                <figure class="background">
+                    <img src="../static/assets/img/bg-modern-wide.png" alt="user image">
+                </figure>
+                <div class="card rounded-0 border-0 bg-none">
+                    <div class="card-body  userlist_large">
+                        <div class="media">
+                            <figure class="avatar120 rounded-circle mt-3">
+                                <img src="assets/img/user1.png" alt="user image" class="mCS_img_loaded">
+                            </figure>
+                            <div class="media-body">
+                                <h3 class="mt-0">{{ currentBusiness.business_name }}</h3>
+                                <h6 class="mb-0 text-secondary">{{ currentBusiness.business_desc }}</h6>
+
+                                <div class="row justify-content-center" style="margin-top: 30px !important;">
+                                    {% for offering in offerings %}
+                                    <div class="col">
+                                        <div class="category-container">
+                                            <p>{{ offering[0] }}</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin page content -->
+            <div class="container" style="margin-bottom: 70px !important;">
+                {% if requestMatchMessage is not none %}
+                <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                    {{ requestMatchMessage }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+                <!-- COMPANIES TABLE -->
+                <h5 class="sub-title text-dark">Matchings</h5>
+                <div class="container-table">
+                    <div class="card rounded-50 border-0">
+                        <div class="card-header scroll-y">
+                            <h4 class="card-title d-inline-block text-dark">Businesses</h4>
+                        </div>
+                        <ul class="nav nav-tabs mb-15" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active border-success" data-toggle="tab" href="#demands" role="tab"
+                                    aria-selected="true">Demands</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border-success" data-toggle="tab" href="#potentialMatches" role="tab"
+                                    aria-selected="true">Potential Matches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border-success" data-toggle="tab" href="#matched" role="tab"
+                                    aria-selected="true">Matched Companies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link border-success" data-toggle="tab" href="#allBusiness" role="tab"
+                                    aria-selected="false">Featured Businesses</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show p-3" id="demands" role="tabpanel">
+                                <div class="card-body p-0" style="height: 300px; overflow-y: scroll;">
+                                    <table class="table mb-0 footable">
+                                        <thead class="d-none">
+                                            <tr>
+                                                <th>Business Name</th>
+                                                <th data-breakpoints="xs">ID</th>
+                                                <th data-breakpoints="xs sm">Description</th>
+                                                <th data-breakpoints="xs sm">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- displaying businesses -->
+                                            <div class="overflow-auto">
+                                                {% for request in pending_requests %}
+                                                {% if request.receiver_id == currentBusiness.id%}
+                                                {% for compGet, offeringGet in requested_match.items() %}
+                                                <!-- {% if request.sender_id == compGet.id %} -->
+                                                <tr>
+                                                    <td>
+                                                        <div class="media">
+                                                            <div
+                                                                class="figure avatar60 rounded-circle align-self-start bg-purple text-white border-0">
+                                                                <img src="{{ url_for('static', filename=company.logo_data) }}"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5 class="time-title p-0">
+                                                                    {{ compGet.business_name }}
+                                                                </h5>
+                                                                {{ compGet.business_address }}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <h5 class="time-title p-0"></h5>
+                                                        <p>{{ compGet.id }}</p>
+                                                    </td>
+                                                    <td>{{ compGet.business_desc }}</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="rounded-3 btn btn-outline-primary btn-sm"
+                                                            data-toggle="modal" data-target="#compID{{ company.id }}">
+                                                            Action
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="compID{{ company.id }}"
+                                                            tabindex="-1" role="dialog"
+                                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" id="exampleModalLabel">
+                                                                            View | {{ compGet.business_name }}
+                                                                        </h4>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="card rounded-0 border-0 mb-3">
+                                                                            <figure
+                                                                                class="background bg-danger small-80">
+                                                                                <img src="../static/assets/img/user2.png"
+                                                                                    alt="user image"
+                                                                                    class="mCS_img_loaded">
+                                                                            </figure>
+                                                                            <div class="card-body  userlist_large">
+                                                                                <div class="media">
+                                                                                    <figure
+                                                                                        class="avatar120 rounded-circle mt-3 border-0">
+                                                                                        <img src="{{ url_for('static', filename=company.logo_data) }}"
+                                                                                            alt="user image"
+                                                                                            class="mCS_img_loaded">
+                                                                                    </figure>
+                                                                                    <div class="media-body">
+                                                                                        <h2 class="mt-0">{{
+                                                                                            compGet.business_name
+                                                                                            }}</h2>
+                                                                                        <h5 class="mb-0">{{
+                                                                                            compGet.business_desc
+                                                                                            }}</h5>
+                                                                                        <h5 class="mt-2">{{
+                                                                                            compGet.business_address
+                                                                                            }}</h5>
+                                                                                        <h5 class="mb-0">{{
+                                                                                            compGet.business_phone
+                                                                                            }}</h5>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="card-footer">
+                                                                                <p>Offering:</p>
+                                                                                <div class="row">
+                                                                                    <div class="col text-center">
+                                                                                        <ul class="social">
+                                                                                            {% for offering in
+                                                                                            offeringGet
+                                                                                            %}
+                                                                                            <li>
+                                                                                                <div
+                                                                                                    class="category-container">
+                                                                                                    <p>{{
+                                                                                                        offering.category
+                                                                                                        }}
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            {% endfor %}
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <p class="text-dark">Qualifiers:</p>
+                                                                                {% set has_multiple_offerings =
+                                                                                offeringGet|length >= 1 %}
+
+                                                                                {% if has_multiple_offerings %}
+                                                                                <!-- Print the qualifier value only once -->
+                                                                                {{ offeringGet[0].qualifier }}
+                                                                                {% endif %}
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-danger mr-auto"
+                                                                            onclick="cancelRequest({{ compGet.id }})">
+                                                                            <i
+                                                                                class="align-self-start icon fa fa-thumbs-o-down"></i>
+                                                                        </button>
+
+                                                                        <button type="button" class="btn btn-success"
+                                                                            onclick="acceptRequest({{ compGet.id }})">
+                                                                            <i
+                                                                                class="align-self-start icon fa fa-thumbs-o-up"></i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- {% endif %} -->
+                                                {% endfor %}
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            <!-- displaying businesses -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane fade p-3" id="potentialMatches" role="tabpanel">
+                                <div class="card-body p-0" style="height: 300px; overflow-y: scroll;">
+                                    <table class="table mb-0 footable">
+                                        <thead class="d-none">
+                                            <tr>
+                                                <th>Business Name</th>
+                                                <th data-breakpoints="xs">ID</th>
+                                                <th data-breakpoints="xs sm">Description</th>
+                                                <th data-breakpoints="xs sm">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- displaying businesses -->
+                                            <div class="overflow-auto">
+                                                {% for company, offerings in company_offerings.items() %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="media">
+                                                            <div
+                                                                class="figure avatar60 rounded-circle align-self-start bg-purple text-white border-0">
+                                                                <img src="{{ url_for('static', filename=company.logo_data) }}"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5 class="time-title p-0">
+                                                                    {{ company.business_name }}
+                                                                </h5>
+                                                                {{ company.business_address }}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <h5 class="time-title p-0"></h5>
+                                                        <p>{{ company.id }}</p>
+                                                    </td>
+                                                    <td>{{ company.business_desc }}</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="rounded-3 btn btn-outline-primary btn-sm"
+                                                            data-toggle="modal" data-target="#compID{{ company.id }}">
+                                                            Action
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="compID{{ company.id }}"
+                                                            tabindex="-1" role="dialog"
+                                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            View | {{ company.business_name }}
+                                                                        </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="card rounded-0 border-0 mb-3">
+                                                                            <figure
+                                                                                class="background bg-danger small-80">
+                                                                                <img src="../static/assets/img/user2.png"
+                                                                                    alt="user image"
+                                                                                    class="mCS_img_loaded">
+                                                                            </figure>
+                                                                            <div class="card-body  userlist_large">
+                                                                                <div class="media">
+                                                                                    <figure
+                                                                                        class="avatar120 rounded-circle mt-3 border-0">
+                                                                                        <img src="{{ url_for('static', filename=company.logo_data) }}"
+                                                                                            alt="user image"
+                                                                                            class="mCS_img_loaded">
+                                                                                    </figure>
+                                                                                    <div class="media-body">
+                                                                                        <h2 class="mt-0">{{
+                                                                                            company.business_name
+                                                                                            }}</h2>
+                                                                                        <h5 class="mb-0">{{
+                                                                                            company.business_desc
+                                                                                            }}</h5>
+                                                                                        <h5 class="mt-2">{{
+                                                                                            company.business_address
+                                                                                            }}</h5>
+                                                                                        <h5 class="mb-0">{{
+                                                                                            company.business_phone
+                                                                                            }}</h5>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="card-footer">
+                                                                                <p class="text-dark">Offering:</p>
+                                                                                <div class="row">
+                                                                                    <div class="col text-center">
+                                                                                        <ul class="social">
+                                                                                            {% for offering in offerings
+                                                                                            %}
+                                                                                            <li>
+                                                                                                <div
+                                                                                                    class="category-container">
+                                                                                                    <p>{{
+                                                                                                        offering.category
+                                                                                                        }}
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            {% endfor %}
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <p class="text-dark">Qualifiers:</p>
+                                                                                {% set has_multiple_offerings =
+                                                                                offerings|length >= 1 %}
+
+                                                                                {% if has_multiple_offerings %}
+                                                                                <!-- Print the qualifier value only once -->
+                                                                                {{ offerings[0].qualifier }}
+                                                                                {% endif %}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class=" modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-danger mr-auto"
+                                                                            data-dismiss="modal">
+                                                                            <i
+                                                                                class="align-self-start icon fa fa-thumbs-o-down"></i>
+                                                                        </button>
+
+                                                                        <!-- <p class="mr-auto">MATCHED
+                                                                        </p> -->
+
+                                                                        <button type=" button" class="btn btn-success"
+                                                                            onclick="matchRequest({{ company.id }})">
+                                                                            <i
+                                                                                class="align-self-start icon fa fa-thumbs-o-up"></i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </div>
+                                            <!-- displaying businesses -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+                            <div class="tab-pane fade p-3" id="matched" role="tabpanel">
+                                <div class="card-body p-0" style="height: 300px; overflow-y: scroll;">
+                                    <table class="table mb-0 footable">
+                                        <thead class="d-none">
+                                            <tr>
+                                                <th>Business Name</th>
+                                                <th data-breakpoints="xs">ID</th>
+                                                <th data-breakpoints="xs sm">Description</th>
+                                                <th data-breakpoints="xs sm">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- displaying businesses -->
+                                            <div class="overflow-auto">
+                                                {% if matched_businesses is not none %}
+                                                {% for businessM in matched_businesses %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="media">
+                                                            <div
+                                                                class="figure avatar60 rounded-circle align-self-start bg-purple text-white border-0">
+                                                                <img src="{{ url_for('static', filename=company.logo_data) }}"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5 class="time-title p-0">
+                                                                    {{ businessM.business_name }}
+                                                                </h5>
+                                                                {{ businessM.business_address }}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <h5 class="time-title p-0"></h5>
+                                                        <p>{{ businessM.id }}</p>
+                                                    </td>
+                                                    <td>{{ businessM.business_desc }}</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="rounded-3 btn btn-outline-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#compIDMatched{{ businessM.id }}">
+                                                            Action
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <form action="/setPriority/{{ businessM.id }}" method="post">
+                                                            <div class="modal fade" id="compIDMatched{{ businessM.id }}"
+                                                                tabindex="-1" role="dialog"
+                                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered"
+                                                                    role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header scroll-y">
+                                                                            <h5 class="modal-title"
+                                                                                id="exampleModalLabel">
+                                                                                View | {{ businessM.business_name }}
+                                                                            </h5>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body"
+                                                                            style="height: 400px; overflow-y: scroll;">
+                                                                            <div class="card rounded-0 border-0 mb-1">
+                                                                                <figure
+                                                                                    class="background bg-danger small-80">
+                                                                                    <img src="../static/assets/img/user2.png"
+                                                                                        alt="user image"
+                                                                                        class="mCS_img_loaded">
+                                                                                </figure>
+                                                                                <div class="card-body  userlist_large">
+                                                                                    <div class="media">
+                                                                                        <figure
+                                                                                            class="avatar120 rounded-circle mt-3 border-0">
+                                                                                            <img src="{{ url_for('static', filename=company.logo_data) }}"
+                                                                                                alt="user image"
+                                                                                                class="mCS_img_loaded">
+                                                                                        </figure>
+                                                                                        <div class="media-body">
+                                                                                            <h2 class="mt-0">{{
+                                                                                                businessM.business_name
+                                                                                                }}</h2>
+                                                                                            <h5 class="mb-0">"{{
+                                                                                                businessM.business_desc
+                                                                                                }}"</h5>
+
+                                                                                            <div
+                                                                                                class="row justify-content-center mt-2">
+                                                                                                <ul class="social">
+                                                                                                    <li>
+                                                                                                        <a href="viber://chat?number={{ company.viber }}"
+                                                                                                            class="sm rounded-circle text-white"
+                                                                                                            style="background-color: #59267c;">
+                                                                                                            <img src="../static/assets/img/viber.png"
+                                                                                                                alt="viber-icon"
+                                                                                                                style="height: 15px !important;">
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                        <a href="https://wa.me/{{ businessM.whatsapp }}"
+                                                                                                            target="_blank"
+                                                                                                            class="sm rounded-circle text-white"
+                                                                                                            style="background-color: #25D366;">
+                                                                                                            <i
+                                                                                                                class="fa fa-whatsapp"></i>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    {% if
+                                                                                                    businessM.twitter_link
+                                                                                                    %}
+                                                                                                    <li>
+                                                                                                        <a href="{{ businessM.twitter_link }}"
+                                                                                                            target="_blank"
+                                                                                                            class="sm rounded-circle text-white bg-tw">
+                                                                                                            <i
+                                                                                                                class="fa fa-twitter"></i>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    {% endif %}
+
+                                                                                                    {% if
+                                                                                                    businessM.fb_link
+                                                                                                    %}
+                                                                                                    <li>
+                                                                                                        <a href="{{ businessM.fb_link }}"
+                                                                                                            target="_blank"
+                                                                                                            class="sm rounded-circle text-white bg-fb">
+                                                                                                            <i
+                                                                                                                class="fa fa-facebook"></i>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    {% endif %}
+
+                                                                                                    {% if
+                                                                                                    businessM.linkedin_link
+                                                                                                    %}
+                                                                                                    <li>
+                                                                                                        <a href="{{ businessM.linkedin_link }}"
+                                                                                                            target="_blank"
+                                                                                                            class="sm rounded-circle text-white bg-ln">
+                                                                                                            <i
+                                                                                                                class="fa fa-linkedin"></i>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    {% endif %}
+
+                                                                                                    {% if
+                                                                                                    businessM.youtube_link
+                                                                                                    %}
+                                                                                                    <li>
+                                                                                                        <a href="{{ businessM.youtube_link }}"
+                                                                                                            target="_blank"
+                                                                                                            class="sm rounded-circle text-white bg-gp">
+                                                                                                            <i
+                                                                                                                class="fa fa-youtube"></i>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    {% endif %}
+                                                                                                </ul>
+                                                                                            </div>
+
+                                                                                            <!-- Set priority -->
+                                                                                            <select id="dropdown"
+                                                                                                name="priority"
+                                                                                                style="font-size: 15px; padding: 5px; margin-top: 10px;
+                                                                                                border: none; background-color: transparent;"
+                                                                                                required>
+                                                                                                <option value="1"
+                                                                                                    disabled selected>
+                                                                                                    Set priority
+                                                                                                </option>
+                                                                                                <option value="3">
+                                                                                                    High
+                                                                                                </option>
+                                                                                                <option value="2">
+                                                                                                    Medium
+                                                                                                </option>
+                                                                                                <option value="1">
+                                                                                                    Low
+                                                                                                </option>
+                                                                                            </select>
+                                                                                            <!-- Set priority -->
+
+                                                                                            <hr>
+
+                                                                                            <p class="text-dark">
+                                                                                                <u>Address:</u>
+                                                                                            </p>
+                                                                                            <h5 class="mb-3">{{
+                                                                                                businessM.business_address
+                                                                                                }}</h5>
+
+                                                                                            <p class="text-dark mb-3">
+                                                                                                <u>Phone
+                                                                                                    Number:</u>
+                                                                                            </p>
+                                                                                            <a href="tel:{{
+                                                                                                businessM.busineSss_phone
+                                                                                                }}">{{
+                                                                                                businessM.business_phone
+                                                                                                }}</a>
+
+                                                                                            <p class="text-dark mt-4">
+                                                                                                <u>Email:</u>
+                                                                                            </p>
+                                                                                            <a href="mailto:{{
+                                                                                                    businessM.email
+                                                                                                    }}">{{
+                                                                                                businessM.business_email
+                                                                                                }}</a>
+
+
+                                                                                            <div
+                                                                                                class="card rounded-0 border-0 mt-5">
+                                                                                                <div
+                                                                                                    class="card-body text-center p-5">
+                                                                                                    <i
+                                                                                                        class="fa fa-file-o fa-4x mb-2 text-warning"></i>
+                                                                                                    <p class="mb-0">
+                                                                                                        ({{
+                                                                                                        businessM.business_name
+                                                                                                        }}).vcf</p>
+                                                                                                    <br>
+                                                                                                    <br>
+                                                                                                    <a class="btn btn-outline-primary"
+                                                                                                        href="/download_vcf/{{ businessM.id }}">
+                                                                                                        <i
+                                                                                                            class="fa fa-cloud-download"></i>
+                                                                                                        Download
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="card-footer">
+                                                                                <p>Offering:</p>
+                                                                                <div class="row">
+                                                                                    <div class="col text-center">
+                                                                                        <ul class="social">
+                                                                                            {% for offering in offerings
+                                                                                            %}
+                                                                                            <li>
+                                                                                                <div
+                                                                                                    class="category-container">
+                                                                                                    <p>{{
+                                                                                                        offering.category
+                                                                                                        }}
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            {% endfor %}
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div> -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer scroll-y">
+                                                                            <button type="button"
+                                                                                class="btn btn-danger mr-auto"
+                                                                                onclick="unmatch({{ businessM.id }})">
+                                                                                Unmatch </button>
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-success"
+                                                                                onclick="">Save</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                                {% endif %}
+                                            </div>
+                                            <!-- displaying businesses -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane fade p-3" id="allBusiness" role="tabpanel">
+                                <div class="card-body p-0" style="height: 300px; overflow-y: scroll;">
+                                    <table class="table mb-0 footable">
+                                        <thead class="d-none">
+                                            <tr>
+                                                <th>Business Name</th>
+                                                <th data-breakpoints="xs">ID</th>
+                                                <th data-breakpoints="xs sm">Description</th>
+                                                <th data-breakpoints="xs sm">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- displaying businesses -->
+                                            <div class="overflow-auto">
+                                                {% for acomp in allCompany %}
+                                                {% if acomp.user_id != user.id %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="media">
+                                                            <div
+                                                                class="figure avatar60 rounded-circle align-self-start bg-purple text-white border-0">
+                                                                <img src="{{ url_for('static', filename=acomp.logo_data) }}"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h5 class="time-title p-0">{{ acomp.business_name }}
+                                                                </h5>
+                                                                {{ acomp.business_address }}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <h5 class="time-title p-0"></h5>
+                                                        <p>{{ acomp.id }}</p>
+                                                    </td>
+                                                    <td>{{ acomp.business_desc }}</td>
+                                                    <td>
+                                                        <span
+                                                            class="rounded-3 btn btn-outline-primary btn-sm">Action</span>
+                                                    </td>
+                                                </tr>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            <!-- displaying businesses -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  -->
+                    <hr>
+                    <!--  -->
+
+                    <div class="card rounded-50 border-0">
+                        <div class="card-header scroll-y">
+                            <h4 class="card-title d-inline-block text-dark">Your Businesses</h4>
+                            <a href="/createBusiness">
+                                <button class="btn btn-success btn-sm float-right"><span>&#43;</span> Add
+                                    Business</button>
+                            </a>
+                        </div>
+
+                        <div class="card-body p-0" style="height: 300px; overflow-y: scroll;">
+                            <table class="table mb-0 footable">
+                                <thead class="d-none">
+                                    <tr>
+                                        <th>Business Name</th>
+                                        <th data-breakpoints="xs">ID</th>
+                                        <th data-breakpoints="xs">Email</th>
+                                        <th data-breakpoints="xs">Phone No.</th>
+                                        <th data-breakpoints="xs sm">Description</th>
+                                        <th data-breakpoints="xs sm">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <div class="overflow-auto">
+                                        <!-- displaying businesses -->
+                                        {% for comp in company %}
+                                        <tr>
+                                            <td>
+                                                <div class="media">
+                                                    <div
+                                                        class="figure avatar60 rounded-circle align-self-start bg-purple text-white border-0">
+                                                        <img src="{{ url_for('static', filename=comp.logo_data) }}"
+                                                            alt="userLogo">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="time-title p-0">{{ comp.business_name }}</h5>
+                                                        {{ comp.business_address }}
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="time-title p-0">{{ comp.id }}</p>
+                                            </td>
+                                            <td>
+                                                <p>{{ comp.business_email }}</p>
+                                            </td>
+                                            <td>{{ comp.business_phone }}</td>
+                                            <td>{{ comp.business_desc }}</td>
+                                            <td>
+                                                <!-- <button type="button" class="rounded-3 btn btn-outline-primary btn-sm"
+                                                    onclick="getCompanyID({{ comp.id }})">Visit
+                                                </button> -->
+                                                <a href="/profile/{{ comp.id }}"
+                                                    onclick="getCompanyID({{ comp.id }})"><button type="button"
+                                                        class="rounded-3 btn btn-outline-primary btn-sm">Visit
+                                                    </button></a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </div>
+                                    <!-- displaying businesses -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- COMPANIES TABLE -->
+            </div>
+        </div>
+        {% else %}
+        <h1 class="text-dark" style="margin-top: 40px !important;">Error. No business found :( </h1>
+        {% endif %}
+        <!-- main container ends -->
+    </div>
+
+    <!-- wrapper ends -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/assets/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../static/assets/vendor/popper.min.js"></script>
+    <script src="../static/assets/vendor/bootstrap-4.1.3/bootstrap.min.js"></script>
+
+    <!-- Footable  -->
+    <script src="../static/assets/vendor/footable-bootstrap.latest/js/footable.min.js"></script>
+
+    <!-- Other JavaScript -->
+    <script src="../static/assets/js/main.js"></script>
+    <script>
+        "use strict";
+        /* Footable */
+        $('.footable').footable();
+
+        function getCompanyID(id) {
+            fetch('/getCompanyID', {
+                method: 'POST',
+                body: JSON.stringify({ compID: id })
+            })
+        }
+
+
+        function matchRequest(comp_id) {
+            fetch('/matchRequest', {
+                method: 'POST',
+                body: JSON.stringify({ requestCompID: comp_id })
+            }).then((_res) => {
+                window.location.href = "/matches/{{ currentBusiness.id }}"
+            })
+        }
+
+        function acceptRequest(accept_id) {
+            fetch('/matchAccept', {
+                method: 'POST',
+                body: JSON.stringify({ acceptCompID: accept_id })
+            }).then((_res) => {
+                window.location.href = "/matches/{{ currentBusiness.id }}"
+            })
+        }
+
+        function cancelRequest(cancel_id) {
+            fetch('/cancelRequest', {
+                method: 'POST',
+                body: JSON.stringify({ cancelCompID: cancel_id })
+            }).then((_res) => {
+                window.location.href = "/matches/{{ currentBusiness.id }}"
+            })
+        }
+
+        function unmatch(unmatch_id) {
+            fetch('/unmatch', {
+                method: 'POST',
+                body: JSON.stringify({ unmatchID: unmatch_id })
+            }).then((_res) => {
+                window.location.href = "/matches/{{ currentBusiness.id }}"
+            })
+        }
+
+        function setPriority(priorityID) {
+            fetch('/setPriority', {
+                method: 'POST',
+                body: JSON.stringify({ priorityID: priorityID })
+            }).then((_res) => {
+                window.location.href = "/matches/{{ currentBusiness.id }}"
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

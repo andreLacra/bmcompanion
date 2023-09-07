@@ -1,0 +1,1903 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+    <!-- fontawesome icons CSS -->
+    <link rel="stylesheet" href="../static/assets/vendor/fontawesome4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <!-- Custome scrollbar CSS -->
+    <link rel="stylesheet"
+        href="../static/assets/vendor/jquery-custom-scrollbar-0.5.5/jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css"
+        type="text/css">
+
+    <!-- framework CSS -->
+    <link id="theme" rel="stylesheet" href="../static/assets/css/style-helpdesk.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/assets/css/style_check.css">
+
+    <!-- Style for navbar bottom -->
+    <link rel="stylesheet" href="../static/assets/css/style_navbottom.css">
+
+    <link rel="icon" href="../static/assets/img/logo.png">
+
+    <title>BMC | {{ company.business_name }}</title>
+</head>
+
+<body class="sticky-footer">
+    <div class="loader-logo">
+        <img src="../static/assets/img/logo.png" alt="bootstrap template design by maxartkiller">
+        <br>
+        <div class="loader-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <!-- Bottom Nav -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <nav class="navBottom">
+            <a href="/dashboard" class="nav__link">
+                <i class="material-icons nav__icon">dashboard</i>
+                <span class="nav__text">Home</span>
+            </a>
+            <a href="/profile/{{ company.id }}" class="nav__link nav__link--active">
+                <i class="material-icons nav__icon">person</i>
+                <span class="nav__text">Profile</span>
+            </a>
+            <a href="/matches/{{ company.id }}" class="nav__link">
+                <i class="material-icons nav__icon">handshake</i>
+                <span class="nav__text">Matches</span>
+            </a>
+            <a href="#" class="nav__link">
+                <i class="material-icons nav__icon">tag</i>
+                <span class="nav__text">RFQ</span>
+            </a>
+            <a href="#" class="nav__link">
+                <i class="material-icons nav__icon">settings</i>
+                <span class="nav__text">Settings</span>
+            </a>
+        </nav>
+        <!-- Bottom Nav -->
+
+        <!-- header starts -->
+        <header class="border-bottom">
+            <!-- Fixed navbar -->
+            <nav class="navbar fixed-top navbar-white bg-white">
+                <div class="d-flex">
+                    <a class="navbar-brand" href="/">
+                        <img src="../static/assets/img/logo.png" alt="">
+                        <h5>
+                            <span>Business Matching Companion</span>
+                        </h5>
+                    </a>
+                </div>
+                <div class="d-flex ml-auto" id="navbarCollapse">
+
+                    <div class="d-block">
+
+                        <div class="float-right">
+                            <a href="/configureBusiness/{{ company.id }}">
+                                <button class="btn btn-link btn-sm sq-btn border-left rounded-0 e" type="button">
+                                    <i class="icon fa fa-edit text-dark mr-2"></i>
+                                </button>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- header ends -->
+
+
+        <!-- main container starts -->
+        {% if showProfile is not false %}
+        <div class="main-container" style="margin-bottom: 70px !important; margin-top: 40px !important;">
+            <div class="container-fluid bg-secondary mb-3 position-relative bg-dark">
+                <figure class="background">
+                    <img src="../static/assets/img/bg-modern-wide.png" alt="user image">
+                </figure>
+                <div class="card rounded-0 border-0 bg-none">
+                    <div class="card-body  userlist_large">
+                        <div class="media">
+                            <figure class="avatar120 rounded-circle mt-3">
+                                <img src="assets/img/user1.png" alt="user image" class="mCS_img_loaded">
+                            </figure>
+                            <div class="media-body">
+                                <h3 class="mt-0">{{ company.business_name }}</h3>
+                                <h6 class="mb-0 text-secondary">{{ company.business_desc }}</h6>
+
+                                <div class="row justify-content-center" style="margin-top: 30px !important;">
+                                    {% for offering in offerings %}
+                                    <div class="col">
+                                        <div class="category-container">
+                                            <p>{{ offering[0] }}</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin page content -->
+            <div class="container" style="margin-bottom: 40px !important;">
+
+                <div class="row">
+                    <div class="col-12 col-md-7 col-lg-8  order-md-1">
+                        <div class="card rounded-0 border-0 mb-3">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5 class="card-title text-dark">
+                                            <i class="icon fa fa-briefcase text-dark mr-2"></i>
+                                            Business Connections
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="user1" role="tabpanel">
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media">
+                                                                <i class="align-self-start icon fa fa-search"></i>
+                                                                <div class="media">
+                                                                    <h5 class="time-title p-0">Seeking</h5>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Set your business seekings here.</td>
+                                                        <td class="text-right">
+                                                            <button type="button" class="btn btn-info btn-sm mb-2"
+                                                                data-toggle="modal" data-target="#seekingModal">
+                                                                Set
+                                                            </button>
+
+                                                            <!-- Modal -->
+                                                            <form action="/seeking" method="post">
+                                                                <div class="modal fade" id="seekingModal" tabindex="-1"
+                                                                    role="dialog" aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered"
+                                                                        role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header scroll-y>
+                                                                                <h4 class=" modal-title text-dark"
+                                                                                id="exampleModalLabel">
+                                                                                <b>Seeking</b>
+                                                                                </h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body justify-content-start"
+                                                                                style="height: 400px; overflow-y: scroll;">
+                                                                                <div class="container"
+                                                                                    style="text-align: left !important;">
+                                                                                    <h5 class="text-dark"
+                                                                                        style="text-align: left !important;">
+                                                                                        Industries:</h5>
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <ul class="ks-cboxtags">
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="TechnologySeeking"
+                                                                                                        value="Technology"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="TechnologySeeking">Technology</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="HealthcareSeeking"
+                                                                                                        value="Healthcare"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="HealthcareSeeking">Healthcare</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="RetailSeeking"
+                                                                                                        value="Retail"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="RetailSeeking">Retail</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="FinanceSeeking"
+                                                                                                        value="Finance"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="FinanceSeeking">Finance</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="ManifacturingSeeking"
+                                                                                                        value="Manifacturing"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="ManifacturingSeeking">Manifacturing</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="AgricultureSeeking"
+                                                                                                        value="Agriculture"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="AgricultureSeeking">Agriculture</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="TransportationSeeking"
+                                                                                                        value="Transportation"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="TransportationSeeking">Transportation</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="RealEstateSeeking"
+                                                                                                        value="Real Estate"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="RealEstateSeeking">Real
+                                                                                                        Estate</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="FoodProcessingSeeking"
+                                                                                                        value="Food Processing"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="FoodProcessingSeeking">Food
+                                                                                                        Processing</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="AutomotiveSeeking"
+                                                                                                        value="Automotive"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="AutomotiveSeeking">Automotive</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="TourismSeeking"
+                                                                                                        value="Tourism"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="TourismSeeking">Tourism</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="EducationSeeking"
+                                                                                                        value="Education"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="EducationSeeking">Education</label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <h5 class="text-dark"
+                                                                                        style="text-align: left !important;">
+                                                                                        Interests:</h5>
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <ul class="ks-cboxtags">
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="cigarClubSeeking"
+                                                                                                        value="Cigar Clubs"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="cigarClubSeeking">Cigar
+                                                                                                        Clubs</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="whisSamSeeking"
+                                                                                                        value="Whisky Sampling"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="whisSamSeeking">Whisky
+                                                                                                        Sampling</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="diningSeeking"
+                                                                                                        value="Dining"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="diningSeeking">Dining</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="artColSeeking"
+                                                                                                        value="Art Collecting"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="artColSeeking">Art
+                                                                                                        Collecting</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="stockInvestSeeking"
+                                                                                                        value="Stocks/Investments"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="stockInvestSeeking">Stocks/Investments</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="theatreOperaSeeking"
+                                                                                                        value="Theatre/Opera"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="theatreOperaSeeking">Theatre/Opera</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="bookClubSeeking"
+                                                                                                        value="Book Club"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="bookClubSeeking">Book
+                                                                                                        Club</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="charitySeeking"
+                                                                                                        value="Charity Event"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="charitySeeking">Charity
+                                                                                                        Event</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="bikeClubSeeking"
+                                                                                                        value="Bike Club"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="bikeClubSeeking">Bike
+                                                                                                        Club</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="sportsSeeking"
+                                                                                                        value="Sports"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="sportsSeeking">Sports</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="pubSpeakSeeking"
+                                                                                                        value="Public Speaking"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="pubSpeakSeeking">Public
+                                                                                                        Speaking</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="debateClbSeeking"
+                                                                                                        value="Debate Club"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="debateClbSeeking">Debate
+                                                                                                        Club</label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                    <h5 class="text-dark"
+                                                                                        style="text-align: left !important;">
+                                                                                        Hobbies:</h5>
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <ul class="ks-cboxtags">
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="golfSeeking"
+                                                                                                        value="Gold"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="golfSeeking">Golf</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="tennisSeeking"
+                                                                                                        value="Tennis"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="tennisSeeking">Tennis</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="yatchBoatSeeking"
+                                                                                                        value="Yatching/Boating"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="yatchBoatSeeking">Yatching/Boating</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="travelSeeking"
+                                                                                                        value="Travel"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="travelSeeking">Travel</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="horseRaceSeeking"
+                                                                                                        value="Horse Racing"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="horseRaceSeeking">Horse
+                                                                                                        Racing</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="fitnessSeeking"
+                                                                                                        value="Fitness"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="fitnessSeeking">Fitness</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="gardenSeeking"
+                                                                                                        value="Gardening"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="gardenSeeking">Gardening</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="photographySeeking"
+                                                                                                        value="Photography"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="photographySeeking">Photography</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="boardGamesSeeking"
+                                                                                                        value="Board Games"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="boardGamesSeeking">Board
+                                                                                                        Games</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="cookBakeSeeking"
+                                                                                                        value="Cooking/Baking"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="cookBakeSeeking">Cooking/Baking</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="danceSeeking"
+                                                                                                        value="Dance"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="danceSeeking">Dance</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="medYogaSeeking"
+                                                                                                        value="Meditation/Yoga"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="medYogaSeeking">Meditation/Yoga</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="tbtRPGSeeking"
+                                                                                                        value="Tabletop RPG"
+                                                                                                        name="optionSeeking">
+                                                                                                    <label
+                                                                                                        for="tbtRPGSeeking">Tabletop
+                                                                                                        RPG</label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class=" modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-secondary"
+                                                                                    data-dismiss="modal">Close</button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-primary">Save
+                                                                                    changes
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="media">
+                                                                <i
+                                                                    class="align-self-start icon fa fa-shopping-cart"></i>
+                                                                <div class="media">
+                                                                    <h5 class="time-title p-0">Offering</h5>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Set your business offerings here.</td>
+                                                        <td class="text-right">
+                                                            <button type="button" class="btn btn-info btn-sm mb-2"
+                                                                data-toggle="modal" data-target="#offeringModal">
+                                                                Set
+                                                            </button>
+
+                                                            <!-- Modal -->
+                                                            <form action="/offering" method="post">
+                                                                <div class="modal fade" id="offeringModal" tabindex="-1"
+                                                                    role="dialog" aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered"
+                                                                        role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header scroll-y">
+                                                                                <h4 class="modal-title text-dark"
+                                                                                    id="exampleModalLabel">Offering</h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body justify-content-start"
+                                                                                style="height: 400px; overflow-y: scroll;">
+                                                                                <div class="container"
+                                                                                    style="text-align: left !important;">
+
+                                                                                    <div class="form-group row">
+                                                                                        <h5 for="staticEmail"
+                                                                                            class="col-sm-7 col-form-label text-dark">
+                                                                                            Qualifiers(optional):</h5>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col">
+                                                                                            <input type="text"
+                                                                                                class="form-control"
+                                                                                                id="qualifiers"
+                                                                                                name="business-qualifiers"
+                                                                                                placeholder="Specify your offering's qualifier">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <hr>
+
+                                                                                    <h5 class="text-dark"
+                                                                                        style="text-align: left !important;">
+                                                                                        Industries:</h5>
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <ul class="ks-cboxtags">
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="TechnologyOffering"
+                                                                                                        value="Technology"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="TechnologyOffering">Technology</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="HealthcareOffering"
+                                                                                                        value="Healthcare"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="HealthcareOffering">Healthcare</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="RetailOffering"
+                                                                                                        value="Retail"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="RetailOffering">Retail</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="FinanceOffering"
+                                                                                                        value="Finance"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="FinanceOffering">Finance</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="ManifacturingOffering"
+                                                                                                        value="Manifacturing"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="ManifacturingOffering">Manifacturing</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="AgricultureOffering"
+                                                                                                        value="Agriculture"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="AgricultureOffering">Agriculture</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="TransportationOffering"
+                                                                                                        value="Transportation"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="TransportationOffering">Transportation</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="RealEstateOffering"
+                                                                                                        value="Real Estate"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="RealEstateOffering">Real
+                                                                                                        Estate</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="FoodProcessingOffering"
+                                                                                                        value="Food Processing"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="FoodProcessingOffering">Food
+                                                                                                        Processing</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="AutomotiveOffering"
+                                                                                                        value="Automotive"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="AutomotiveOffering">Automotive</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="TourismOffering"
+                                                                                                        value="Tourism"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="TourismOffering">Tourism</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="EducationOffering"
+                                                                                                        value="Education"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="EducationOffering">Education</label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <h5 class="text-dark"
+                                                                                        style="text-align: left !important;">
+                                                                                        Interests:</h5>
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <ul class="ks-cboxtags">
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="cigarClubOffering"
+                                                                                                        value="Cigar Clubs"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="cigarClubOffering">Cigar
+                                                                                                        Clubs</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="whisSamOffering"
+                                                                                                        value="Whisky Sampling"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="whisSamOffering">Whisky
+                                                                                                        Sampling</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="diningOffering"
+                                                                                                        value="Dining"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="diningOffering">Dining</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="artColOffering"
+                                                                                                        value="Art Collecting"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="artColOffering">Art
+                                                                                                        Collecting</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="stockInvestOffering"
+                                                                                                        value="Stocks/Investments"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="stockInvestOffering">Stocks/Investments</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="theatreOperaOffering"
+                                                                                                        value="Theatre/Opera"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="theatreOperaOffering">Theatre/Opera</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="bookClubOffering"
+                                                                                                        value="Book Club"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="bookClubOffering">Book
+                                                                                                        Club</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="charityOffering"
+                                                                                                        value="Charity Event"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="charityOffering">Charity
+                                                                                                        Event</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="bikeClubOffering"
+                                                                                                        value="Bike Club"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="bikeClubOffering">Bike
+                                                                                                        Club</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="sportsOffering"
+                                                                                                        value="Sports"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="sportsOffering">Sports</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="pubSpeakOffering"
+                                                                                                        value="Public Speaking"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="pubSpeakOffering">Public
+                                                                                                        Speaking</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="debateClbOffering"
+                                                                                                        value="Debate Club"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="debateClbOffering">Debate
+                                                                                                        Club</label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                    <h5 class="text-dark"
+                                                                                        style="text-align: left !important;">
+                                                                                        Hobbies:</h5>
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <ul class="ks-cboxtags">
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="golfOffering"
+                                                                                                        value="Gold"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="golfOffering">Golf</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="tennisOffering"
+                                                                                                        value="Tennis"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="tennisOffering">Tennis</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="yatchBoatOffering"
+                                                                                                        value="Yatching/Boating"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="yatchBoatOffering">Yatching/Boating</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="travelOffering"
+                                                                                                        value="Travel"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="travelOffering">Travel</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="horseRaceOffering"
+                                                                                                        value="Horse Racing"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="horseRaceOffering">Horse
+                                                                                                        Racing</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="fitnessOffering"
+                                                                                                        value="Fitness"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="fitnessOffering">Fitness</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="gardenOffering"
+                                                                                                        value="Gardening"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="gardenOffering">Gardening</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="photographyOffering"
+                                                                                                        value="Photography"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="photographyOffering">Photography</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="boardGamesOffering"
+                                                                                                        value="Board Games"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="boardGamesOffering">Board
+                                                                                                        Games</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="cookBakeOffering"
+                                                                                                        value="Cooking/Baking"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="cookBakeOffering">Cooking/Baking</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="danceOffering"
+                                                                                                        value="Dance"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="danceOffering">Dance</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="medYogaOffering"
+                                                                                                        value="Meditation/Yoga"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="medYogaOffering">Meditation/Yoga</label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input
+                                                                                                        type="checkbox"
+                                                                                                        id="tbtRPGOffering"
+                                                                                                        value="Tabletop RPG"
+                                                                                                        name="optionOffering">
+                                                                                                    <label
+                                                                                                        for="tbtRPGOffering">Tabletop
+                                                                                                        RPG</label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-secondary"
+                                                                                    data-dismiss="modal">Close</button>
+                                                                                <button type="submit"
+                                                                                    class="btn btn-primary">Save
+                                                                                    changes
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MEETINGS -->
+                        <div class="card rounded-0 border-0 mb-3" style="height: 360px !important;">
+                            <div class="card-header scroll-y">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-dark">
+                                                <i class="icon fa fa-handshake-o text-dark mr-2"></i>Meetings
+                                            </h5>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                                                data-target="#modal-meeting">
+                                                Request Meeting</button>
+
+                                            <!-- Modal for meeting -->
+                                            <div class="modal fade" id="modal-meeting" tabindex="-1" role="dialog"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title text-dark text-center">
+                                                                Request Meeting
+                                                            </h4>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <div class="list-unstyled userlist mb-3">
+                                                                {% if matched_businesses is not none %}
+                                                                {% for businessMeeting in matched_businesses %}
+                                                                <div class="item">
+                                                                    <a class="media"
+                                                                        href="/setMeeting/{{ businessMeeting.id }}">
+                                                                        <figure
+                                                                            class="avatar36 rounded-circle z2 align-self-start mr-3">
+                                                                            <img src="assets/img/user2.png"
+                                                                                alt="Generic placeholder image"
+                                                                                class="mCS_img_loaded">
+                                                                        </figure>
+                                                                        <div class="media-body">
+                                                                            <h4>{{ businessMeeting.business_name
+                                                                                }}
+                                                                            </h4>
+                                                                            <p>{{ businessMeeting.business_email }}
+                                                                            </p>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                {% endfor %}
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal for meeting -->
+                                        </div>
+                                    </div>
+                                    <ul class="nav nav-tabs mt-2" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active  border-primary" data-toggle="tab"
+                                                href="#meetings" role="tab" aria-selected="true">Meetings</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link border-primary" data-toggle="tab"
+                                                href="#requestedMeetings" role="tab" aria-selected="false">Requested
+                                                Meetings</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-body" style="overflow-y: scroll;">
+                                <div class="tab-content scroll-y">
+                                    <!-- Meetings -->
+                                    <div class="tab-pane fade active show" id="meetings" role="tabpanel">
+                                        <div class="list-unstyled mb-3" style="padding: 10px;">
+                                            {% for meeting in meetings_data %}
+                                            <div class="item">
+                                                <div class="media">
+                                                    <i class="align-self-start icon fa fa-calendar"></i>
+                                                    <div class="media-body">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h5>{{ meeting.company_name }}</h5>
+                                                                <p>{{ meeting.title }} ({{ meeting.mode }})</p>
+                                                                {{ meeting.date }}
+                                                            </div>
+
+                                                            <div class="col">
+                                                                {% if meeting.status == 'PENDING' %}
+                                                                <span class="badge badge-warning mb-1">-
+                                                                    {{meeting.status}}
+                                                                    -</span>
+                                                                {% endif %}
+
+                                                                {% if meeting.status == 'ACCEPTED' %}
+                                                                <span class="badge badge-success mb-1">-
+                                                                    {{meeting.status}}
+                                                                    -</span>
+                                                                {% endif %}
+
+                                                                {% if meeting.status == 'DECLINED' %}
+                                                                <span class="badge badge-danger mb-1">-
+                                                                    {{meeting.status}}
+                                                                    -</span>
+                                                                {% endif %}
+                                                            </div>
+
+                                                            <div class="col" style="margin-top: 10px;">
+                                                                <button type="button" class="btn btn-info btn-sm"
+                                                                    data-toggle="modal"
+                                                                    data-target="#meeting-{{ meeting.id }}">
+                                                                    Set Status
+                                                                </button>
+
+
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="meeting-{{ meeting.id }}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered"
+                                                                        role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h3 class="modal-title text-dark"
+                                                                                    id="exampleModalLabel">Meeting | {{
+                                                                                    meeting.company_name }}
+                                                                                </h3>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <form
+                                                                                action="/updateStatus/{{ meeting.id }}"
+                                                                                method="post">
+                                                                                <div class="modal-body">
+                                                                                    <div
+                                                                                        class="card rounded-0 border-0 mb-3">
+                                                                                        <div class="card-body p-0">
+                                                                                            <div class="row m-0">
+                                                                                                <div
+                                                                                                    class="p-3 bg-warning">
+                                                                                                    <div class="media">
+                                                                                                        <div
+                                                                                                            class="media-body">
+                                                                                                            <h4
+                                                                                                                class="f-light">
+                                                                                                                <b>
+                                                                                                                    {{
+                                                                                                                    meeting.dateDay
+                                                                                                                    }}
+                                                                                                                </b>
+                                                                                                            </h4>
+                                                                                                            <p>
+                                                                                                                <b>{{
+                                                                                                                    meeting.dateMonth
+                                                                                                                    }}
+                                                                                                                </b>
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="col px-3 pt-3">
+                                                                                                    <div class="media">
+                                                                                                        <div
+                                                                                                            class="media-body">
+                                                                                                            <h4
+                                                                                                                class="f">
+                                                                                                                <b>
+                                                                                                                    {{
+                                                                                                                    meeting.title
+                                                                                                                    }}
+                                                                                                                </b>
+                                                                                                            </h4>
+
+                                                                                                            {% if
+                                                                                                            meeting.status
+                                                                                                            == 'PENDING'
+                                                                                                            %}
+                                                                                                            <span
+                                                                                                                class="badge badge-warning mb-1">-
+                                                                                                                {{meeting.status}}
+                                                                                                                -</span>
+                                                                                                            {% endif %}
+
+                                                                                                            {% if
+                                                                                                            meeting.status
+                                                                                                            ==
+                                                                                                            'ACCEPTED'
+                                                                                                            %}
+                                                                                                            <span
+                                                                                                                class="badge badge-success mb-1">-
+                                                                                                                {{meeting.status}}
+                                                                                                                -</span>
+                                                                                                            {% endif %}
+
+                                                                                                            {% if
+                                                                                                            meeting.status
+                                                                                                            ==
+                                                                                                            'DECLINED'
+                                                                                                            %}
+                                                                                                            <span
+                                                                                                                class="badge badge-danger mb-1">-
+                                                                                                                {{meeting.status}}
+                                                                                                                -</span>
+                                                                                                            {% endif %}
+
+                                                                                                            <h5>
+                                                                                                                <i
+                                                                                                                    class="fa fa-clock-o"></i>
+                                                                                                                {{
+                                                                                                                meeting.time
+                                                                                                                }} | {{
+                                                                                                                meeting.duration
+                                                                                                                }} ({{
+                                                                                                                meeting.mode
+                                                                                                                }})
+                                                                                                            </h5>
+                                                                                                            <a
+                                                                                                                href="{{ meeting.link }}">{{meeting.link}}</a>
+                                                                                                            <br><br>
+                                                                                                            <p>{{
+                                                                                                                meeting.details
+                                                                                                                }}</p>
+                                                                                                            <br>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <a
+                                                                                                        href="/download_ics/{{ meeting.request_id}}"><button
+                                                                                                            type="button"
+                                                                                                            class="rounded-3 btn btn-outline-primary btn-sm">Download
+                                                                                                            ICS
+                                                                                                        </button></a>
+                                                                                                    <div
+                                                                                                        class="row mt-2">
+                                                                                                        <div
+                                                                                                            class="card-footer text-left col border-0">
+                                                                                                            <p
+                                                                                                                class="text-dark">
+                                                                                                                Set
+                                                                                                                status:
+                                                                                                            </p>
+                                                                                                            <select
+                                                                                                                id="dropdown"
+                                                                                                                name="status"
+                                                                                                                style="font-size: 15px; padding: 5px;
+                                                                                                                border: none; background-color: transparent;"
+                                                                                                                required>
+                                                                                                                <option
+                                                                                                                    value=""
+                                                                                                                    disabled
+                                                                                                                    selected>
+                                                                                                                    status
+                                                                                                                </option>
+                                                                                                                <option
+                                                                                                                    value="Accepted">
+                                                                                                                    Accept
+                                                                                                                </option>
+                                                                                                                <option
+                                                                                                                    value="Declined">
+                                                                                                                    Decline
+                                                                                                                </option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        </div>
+
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button"
+                                                                                        class="btn btn-danger"
+                                                                                        data-dismiss="modal">Cancel</button>
+                                                                                    <button type="submit"
+                                                                                        class="btn btn-success">Save</button>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <!-- Meetings -->
+
+                                    <!-- Requested Meetings -->
+                                    <div class="tab-pane fade show" id="requestedMeetings" role="tabpanel">
+                                        <div class="list-unstyled mb-3" style="padding: 10px;">
+                                            {% for meetingRequest in requested_meetings_data %}
+                                            <div class="item">
+                                                <div class="media">
+                                                    <i class="align-self-start icon fa fa-calendar"></i>
+                                                    <div class="media-body">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h5>{{ meetingRequest.company_name }} | {{
+                                                                    meetingRequest.date }}</h5>
+                                                                <i class="fa fa-clock-o"></i>
+                                                                {{
+                                                                meetingRequest.time
+                                                                }} | {{
+                                                                meetingRequest.duration
+                                                                }}
+                                                                <br><br>
+                                                                <p class="text-dark">{{ meetingRequest.title }} ({{
+                                                                    meetingRequest.mode }})</p>
+                                                                {{ meetingRequest.details }}
+                                                            </div>
+                                                            <!-- status -->
+                                                            <div class="col-sm-3" style="margin-top: 10px;">
+                                                                {% if meetingRequest.status == 'PENDING' %}
+                                                                <span class="badge badge-warning mb-1">-
+                                                                    {{meetingRequest.status}}
+                                                                    -</span>
+                                                                {% endif %}
+
+                                                                {% if meetingRequest.status == 'ACCEPTED' %}
+                                                                <span class="badge badge-success mb-1">-
+                                                                    {{meetingRequest.status}}
+                                                                    -</span>
+                                                                {% endif %}
+
+                                                                {% if meetingRequest.status == 'DECLINED' %}
+                                                                <span class="badge badge-danger mb-1">-
+                                                                    {{meetingRequest.status}}
+                                                                    -</span>
+                                                                {% endif %}
+                                                            </div>
+                                                            <!-- status -->
+
+                                                            <!-- cancel meeting -->
+                                                            <div class="col">
+                                                                <button type="button" class="btn btn-danger btn-sm"
+                                                                    data-toggle="modal"
+                                                                    data-target="#cancelMeeting-{{ meetingRequest.id }}">
+                                                                    Cancel
+                                                                </button>
+
+                                                                <!-- Modal -->
+                                                                <div class="modal fade"
+                                                                    id="cancelMeeting-{{ meetingRequest.id }}"
+                                                                    tabindex="-1" role="dialog"
+                                                                    aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered"
+                                                                        role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h3 class="modal-title text-dark"
+                                                                                    id="exampleModalLabel">Cancel
+                                                                                    Meeting
+                                                                                </h3>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <h4 class="text-dark">Are you sure that
+                                                                                    you want to cancel this
+                                                                                    meeting with {{
+                                                                                    meetingRequest.company_name }} ({{
+                                                                                    meetingRequest.title }})?</h4>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger"
+                                                                                    data-dismiss="modal">No</button>
+                                                                                <a
+                                                                                    href="/cancelMeeting/{{ meetingRequest.id }}"><button
+                                                                                        type="button"
+                                                                                        class="btn btn-success">Yes</button></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- cancel meeting -->
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <!-- Requested Meetings -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 col-lg-4">
+                        <div class="card rounded-0 border-0 mb-3">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5 class="card-title text-dark">About</h5>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="mb-0 text-secondary">
+                                <h6 class="mb-0">{{ company.business_desc }}</h6>
+                                <br>
+                                <br>
+                                <a>{{ company.business_phone }}</a>
+                                <br>
+                                <a>{{ company.business_address }}</a>
+                                </p>
+                                <br>
+                                <ul class="social mb-3">
+                                    <li>
+                                        <a href="viber://chat?number={{ company.viber }}"
+                                            class="sm rounded-circle text-white" style="background-color: #59267c;">
+                                            <img src="../static/assets/img/viber.png" alt="viber-icon"
+                                                style="height: 15px !important;">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://wa.me/{{ company.whatsapp }}" target="_blank"
+                                            class="sm rounded-circle text-white" style="background-color: #25D366;">
+                                            <i class="fa fa-whatsapp"></i>
+                                        </a>
+                                    </li>
+                                    {% if company.twitter_link %}
+                                    <li>
+                                        <a href="{{ company.twitter_link }}" target="_blank"
+                                            class="sm rounded-circle text-white bg-tw">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% if company.fb_link %}
+                                    <li>
+                                        <a href="{{ company.fb_link }}" target="_blank"
+                                            class="sm rounded-circle text-white bg-fb">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% if company.linkedin_link %}
+                                    <li>
+                                        <a href="{{ company.linkedin_link }}" target="_blank"
+                                            class="sm rounded-circle text-white bg-ln">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% if company.youtube_link %}
+                                    <li>
+                                        <a href="{{ company.youtube_link }}" target="_blank"
+                                            class="sm rounded-circle text-white bg-gp">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="media media-sm text-left">
+                                    <div class="media-body">
+                                        <h5>{{ connections }}</h5>
+                                        <span class="text-primary">Connection</span>
+                                    </div>
+                                    <i class="align-self-left text-secondary ml-2 mr-0 icon fa fa-users"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- CONTACTS -->
+                        <div class="card rounded-0 border-0 mb-3 scroll-y">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h5 class="card-title text-dark">Contacts
+                                        </h5>
+                                    </div>
+                                    <div class="col text-right">
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn btn-link btn-sm text-secondary rounded-0 dropdown-toggle float-right icon"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                type="button">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa fa-cog text-secondary"></i> Settings</a>
+                                                <a class="dropdown-item" href="#unmatched-section">
+                                                    <i class="fa fa-circle-o-notch text-secondary"></i> Unmatched
+                                                    contacts</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0 " style="height: 240px; overflow-y: scroll;">
+                                <div class="col">
+                                    <!-- CHAT USERS LIST-->
+                                    <div class="card-body p-0 scroll-y mb-7">
+                                        {% if matched_businesses is not none %}
+                                        {% for business in matched_businesses %}
+                                        <button data-toggle="modal" data-target="#compID{{ business.id }}"
+                                            style="border: none;" onclick="openMessage({{ business.id }})">
+                                            <div class="list-unstyled userlist chat-list"
+                                                style="background-color: transparent; width: 290px;">
+                                                <div class="item">
+                                                    <div class="media">
+                                                        <figure
+                                                            class="avatar36 rounded-circle z2 align-self-start mr-3">
+                                                            <img src="assets/img/user2.png"
+                                                                alt="Generic placeholder image" class="mCS_img_loaded">
+                                                        </figure>
+                                                        <div class="media-body">
+                                                            <h5 class="time-title text-left">{{ business.business_name
+                                                                }}
+                                                                <small class="float-right">ID: {{ business.id }}</small>
+                                                            </h5>
+                                                            <p class="float-left">{{ business.business_phone }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="compID{{ business.id }}" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header scroll-y">
+                                                        <div class="row ml-1" style="width: 100%;">
+                                                            <div class="col-sm>
+                                                                <button class=" btn btn-link text-dark backbtn"
+                                                                data-dismiss="modal">
+                                                                <i class="fa fa-arrow-left"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="media media-sm">
+                                                                    <figure class="avatar36 rounded-circle">
+                                                                        <img src="assets/img/user1.png"
+                                                                            alt="user image">
+                                                                    </figure>
+                                                                    <div class="media-body text-left">
+                                                                        <p class="mb-0 text-dark"
+                                                                            style="font-size: 17px;">
+                                                                            <b>{{
+                                                                                business.business_name
+                                                                                }}</b>
+                                                                        </p>
+                                                                        ID: {{ business.id }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col justify-content-end">
+                                                                <div class="dropdown">
+                                                                    <button
+                                                                        class="btn btn-link btn-sm text-secondary rounded-0 dropdown-toggle float-right icon"
+                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false" type="button">
+                                                                        <i class="fa fa-ellipsis-v"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a class="dropdown-item"
+                                                                            href="/download_vcf/{{ business.id }}">
+                                                                            <i
+                                                                                class="fa fa-download text-secondary"></i>
+                                                                            Download VCF</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-body" style="height: 400px; overflow-y: scroll;">
+                                                        <!-- CHAT MESSAGES -->
+                                                        <div class="card-body p-0">
+                                                            <ul class="chat" id="chat-list-{{ business.id }}">
+
+                                                            </ul>
+                                                        </div>
+                                                        <!-- CHAT MESSAGES -->
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="border-top mr-auto" style="width: 100%;">
+                                                            <div class="form-group text-left mb-0">
+
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        id="message-input-{{ business.id }}"
+                                                                        placeholder="Enter Message...">
+                                                                    <div class="input-group-prepend">
+                                                                        <button class="input-group-text"
+                                                                            id="send-button"
+                                                                            data-receiver-id="{{ business.id }}"
+                                                                            onclick="sendMessage({{ business.id }})">
+                                                                            <i class="fa fa-send"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    <!-- CHAT USERS LIST -->
+
+                                    <!-- Separator for unmatched convos -->
+                                    <section id="unmatched-section">
+                                        <div class="separator">Unmatched Contacts</div>
+                                    </section>
+
+
+                                    <!-- UNMATCHED USERS LIST-->
+                                    <div class="card-body p-0 scroll-y mb-7">
+                                        {% if unmatched_businesses is not none %}
+                                        {% for uBusiness in unmatched_businesses %}
+                                        <button data-toggle="modal" data-target="#compID{{ uBusiness.id }}"
+                                            style="border: none;" onclick="openMessage({{ uBusiness.id }})">
+                                            <div class="list-unstyled userlist chat-list"
+                                                style="background-color: transparent; width: 290px;">
+                                                <div class="item">
+                                                    <div class="media">
+                                                        <figure
+                                                            class="avatar36 rounded-circle z2 align-self-start mr-3">
+                                                            <img src="assets/img/user2.png"
+                                                                alt="Generic placeholder image" class="mCS_img_loaded">
+                                                        </figure>
+                                                        <div class="media-body">
+                                                            <h5 class="time-title text-left">User
+                                                                <small class="float-right">ID: --</small>
+                                                            </h5>
+                                                            <p class="float-left">--</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="compID{{ uBusiness.id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header scroll-y">
+                                                        <div class="row">
+                                                            <button class="btn btn-link text-dark backbtn"
+                                                                data-dismiss="modal">
+                                                                <i class="fa fa-arrow-left"></i>
+                                                            </button>
+                                                            <div class="col">
+                                                                <div class="media media-sm">
+                                                                    <figure class="avatar36 rounded-circle">
+                                                                        <img src="assets/img/user1.png"
+                                                                            alt="user image">
+                                                                    </figure>
+                                                                    <div class="media-body text-left">
+                                                                        <p class="mb-0 text-dark"
+                                                                            style="font-size: 17px;">
+                                                                            <b>User</b>
+                                                                        </p>
+                                                                        ID: --
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-body" style="height: 400px; overflow-y: scroll;">
+                                                        <!-- CHAT MESSAGES -->
+                                                        <div class="card-body p-0">
+                                                            <ul class="chat" id="chat-list-{{ uBusiness.id }}">
+
+                                                            </ul>
+                                                        </div>
+                                                        <!-- CHAT MESSAGES -->
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="mr-auto" style="width: 100%;">
+                                                            <div class="form-group text-center mb-0">
+                                                                <p>This contact is unavailable. <a
+                                                                        onclick="remove({{ uBusiness.id }})"><u>Remove</u></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    <!-- UNMATCHED USERS LIST -->
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CHAT MESSAGES -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <h1 class="text-dark" style="margin-top: 40px !important;">Error. No business found :( </h1>
+        {% endif %}
+        <!-- main container ends -->
+
+    </div>
+    <!-- wrapper ends -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/assets/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../static/assets/vendor/popper.min.js"></script>
+    <script src="../static/assets/vendor/bootstrap-4.1.3/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Other JavaScript -->
+    <script src="../static/assets/js/main.js"></script>
+
+    <script>
+
+        function remove(removeCompID) {
+            fetch('/removeMatch', {
+                method: 'POST',
+                body: JSON.stringify({ removeCompID: removeCompID })
+            }).then((_res) => {
+                window.location.href = "/profile/{{ company.id }}"
+            })
+        }
+
+        // Chat functions
+        var company_id = {{ company.id }};
+        var matched_id;
+
+        function loadMessages(receiver_id) {
+            $.get(`/chat_messages/${company_id}/${receiver_id}`, function (response) {
+                var chatList = $(`#chat-list-${receiver_id}`);
+                chatList.empty();
+
+                response.messages.forEach(function (message) {
+                    var messageHTML = '';
+
+                    if (message.sender_id === company_id) {
+                        messageHTML = `
+                            <li class="right clearfix">
+                                <figure class="chat-img avatar36 rounded-circle">
+                                    <img src="assets/img/user4.png" alt="User Avatar" class="img-circle">
+                                </figure>
+                                <div class="chat-body rounded clearfix bg-primary">
+                                    <div class="headers">
+                                        <strong class="primary-font">You</strong>
+                                        <small class="pull-right text-white">
+                                            <i class="fa fa-clock-o fa-fw"></i>
+                                            ${message.timestamp}
+                                        </small>
+                                    </div>
+                                    <p>${message.text}</p>
+                                </div>
+                            </li>`;
+                    } else {
+                        messageHTML = `
+                            <li class="left clearfix">
+                                <figure class="chat-img avatar36 rounded-circle">
+                                    <img src="assets/img/user4.png" alt="User Avatar" class="img-circle">
+                                </figure>
+                                <div class="chat-body rounded clearfix">
+                                    <div class="headers">
+                                        <strong class="primary-font">${message.name}</strong>
+                                        <small class="pull-right">
+                                            <i class="fa fa-clock-o fa-fw"></i>
+                                            ${message.timestamp}
+                                        </small>
+                                    </div>
+                                    <p>${message.text}</p>
+                                </div>
+                            </li>`;
+                    }
+
+                    chatList.append(messageHTML);
+                });
+            });
+        }
+
+        function openMessage(id) {
+            matched_id = id;
+            loadMessages(matched_id); // Load messages for the selected business
+        }
+
+        function sendMessage(receiverID) {
+            // var text = $(this).siblings('.form-control').val();
+            var text = $(`#message-input-${receiverID}`).val();
+            var receiver_id = receiverID; // Get receiver ID from data attribute
+            if (text !== "") {
+                var sender_id = company_id; // Assuming the sender is the company
+                $.post(`/chat_messages/${company_id}/${receiver_id}`, { sender_id: sender_id, text: text }, function (response) {
+                    console.log(response);
+                    loadMessages(receiver_id); // Load updated messages after sending
+                });
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

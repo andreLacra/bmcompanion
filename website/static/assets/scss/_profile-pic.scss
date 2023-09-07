@@ -1,0 +1,20 @@
+figure,.figure{
+	display: inline-block; vertical-align: middle; margin: 0 5px 0 0; color: $color-secondary; position: relative; 
+    &:last-child{margin-right:0;}
+	img{vertical-align: middle; width: 100%; display: block;float: left}
+	&.avatar30{ min-width: 30px; height: 30px !important; width: 30px !important; overflow: hidden;background-color: lighten($color-secondary, 38%);line-height:28px;vertical-align:middle; text-align:center; font-size:12px; margin: 0 5px 0 0; }
+	&.avatar36{ min-width: 36px; height: 36px !important; width: 36px !important; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:34px; vertical-align:middle; text-align:center; font-size:13px; margin: 0 5px 0 0; }
+	&.avatar40{ min-width: 40px; height: 40px !important; width: 40px !important; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:38px; vertical-align:middle; text-align:center; font-size:15px; margin: 0 5px 0 0; }
+	&.avatar50{ min-width: 50px; height: 50px !important; width: 50px !important; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:48px; vertical-align:middle; text-align:center; font-size:16px;}
+	&.avatar60{ min-width: 60px; height: 60px !important; width: 60px !important; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:58px; vertical-align:middle; text-align:center; font-size:18px;}
+	&.avatar70{ min-width: 70px; height: 70px; width: 70px; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:66px; vertical-align:middle; text-align:center; font-size:18px;}
+	&.avatar80{ min-width: 80px; height: 80px; width: 80px; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:76px; vertical-align:middle; text-align:center; font-size:18px;}
+	&.avatar90{ min-width: 90px; height: 90px; width: 90px; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:86px; vertical-align:middle; text-align:center; font-size:22px;}
+	&.avatar100{ min-width: 100px; height: 100px; width: 100px; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:96px; vertical-align:middle; text-align:center; font-size:30px;}
+	&.avatar120{ min-width: 120px; height: 120px; width: 120px; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:118px; vertical-align:middle; text-align:center; font-size:50px;}
+	&.avatar150{ min-width: 150px; height: 150px; width: 150px; overflow: hidden;  background-color: lighten($color-secondary, 38%); line-height:146px; vertical-align:middle; text-align:center; font-size:70px;}
+
+}
+.figure{
+ border:1px solid lighten($color-secondary, 15%); position: relative
+}

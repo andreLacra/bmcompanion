@@ -1,0 +1,10 @@
+.btn-primary, .btn-success{color: #ffffff;}
+.btn-white{background:$white; &:hover, &:focus{background:darken($white, 8%);} &:active{background:darken($white, 16%);}}
+.btn-secondary{background: darken($base-background, 10%); border-color:  darken($base-background, 10%); color: $color-primary}
+.btn-secondary:hover,.btn-secondary:focus{background: lighten($base-background, 2%); color: $color-primary}
+.btn-lg{ font-size: 16px; line-height: 20px; padding: 15px 25px;}
+.btn-outline-light:hover, .btn-outline-light:active{ color: #222222 !important; i{color: #222222 !important}}
+.btn.icon{ min-width: 30px;}
+.btn-rounded{ border-radius: 50px; -webkit-border-radius: 50px; -ms-border-radius: 50px;}
+.btn-float{ position: absolute; right: 15px; border-radius: 50%; width: 40px; height: 40px; z-index: 2; &.top{ margin-top: -20px; top: 0; } &.bottom{ bottom: 15px; right: 15px;}}
+.sq-btn{ color: $header-fontcolor1; height: $header-height; line-height: $header-height; width: $header-height; padding: 0; font-size: 14px; border-radius: 0; border: 0; &:after{ display: none}}
